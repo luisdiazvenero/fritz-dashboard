@@ -1,0 +1,38 @@
+# Dependencias de Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Salida del build (carpeta generada por Vite)
+dist/
+
+# Variables de entorno
+.env
+.env.local
+.env.*.local
+
+# Configuración de IDEs/editores (VSCode, JetBrains, etc.)
+.vscode/
+.idea/
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Configuración de MacOS
+*.swp
+*.lock
+*.log
+
+# Cachés de testing y coverage (si usas herramientas de pruebas como Jest)
+coverage/
+*.cache/
+
+# Archivos de configuración temporales
+*.log
+*.bak
+*.tmp
+
+# Caché de Vite
+.vite/
