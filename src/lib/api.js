@@ -1,5 +1,6 @@
 // src/lib/api.js
-const API_BASE_URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:5001/api';
+const API_BASE_URL = `${import.meta.env.VITE_BACKEND_URL}/api`; 
+//const API_BASE_URL = 'http://localhost:5001/api';
 
 const handleApiResponse = async (response) => {
   if (!response.ok) {
@@ -98,7 +99,7 @@ export const api = {
       try {
         console.log('Fetching web metrics...');
         const queryString = new URLSearchParams(params).toString();
-        const response = await fetch(`${API_BASE_URL}/api/metrics/web?${queryString}`);
+        const response = await fetch(`${API_BASE_URL}/metrics/web?${queryString}`);
         return handleApiResponse(response);
       } catch (error) {
         console.error('Error fetching web metrics:', error);
@@ -113,7 +114,7 @@ export const api = {
       try {
         console.log('Fetching social metrics...');
         const queryString = new URLSearchParams(params).toString();
-        const response = await fetch(`${API_BASE_URL}/api/metrics/social?${queryString}`);
+        const response = await fetch(`${API_BASE_URL}/metrics/social?${queryString}`);
         return handleApiResponse(response);
       } catch (error) {
         console.error('Error fetching social metrics:', error);
@@ -128,7 +129,7 @@ export const api = {
       try {
         console.log('Fetching media metrics...');
         const queryString = new URLSearchParams(params).toString();
-        const response = await fetch(`${API_BASE_URL}/api/metrics/media?${queryString}`);
+        const response = await fetch(`${API_BASE_URL}/metrics/media?${queryString}`);
         return handleApiResponse(response);
       } catch (error) {
         console.error('Error fetching media metrics:', error);
@@ -176,7 +177,7 @@ export const api = {
 // Paso 1: Inspeccionar la API en 'api.js'
 export const fetchWebMetricsAPI = async () => {
   try {
-      const response = await fetch('/api/metrics/web'); // Endpoint
+    const response = await fetch(`${API_BASE_URL}/metrics/web`); // Endpoint
       if (!response.ok) {
           throw new Error('Error al obtener métricas');
       }
