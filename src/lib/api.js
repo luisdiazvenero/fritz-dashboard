@@ -98,7 +98,7 @@ export const api = {
       try {
         console.log('Fetching web metrics...');
         const queryString = new URLSearchParams(params).toString();
-        const response = await fetch(`${API_BASE_URL}/metrics/web?${queryString}`);
+        const response = await fetch(`${API_BASE_URL}/api/metrics/web?${queryString}`);
         return handleApiResponse(response);
       } catch (error) {
         console.error('Error fetching web metrics:', error);
@@ -113,7 +113,7 @@ export const api = {
       try {
         console.log('Fetching social metrics...');
         const queryString = new URLSearchParams(params).toString();
-        const response = await fetch(`${API_BASE_URL}/metrics/social?${queryString}`);
+        const response = await fetch(`${API_BASE_URL}/api/metrics/social?${queryString}`);
         return handleApiResponse(response);
       } catch (error) {
         console.error('Error fetching social metrics:', error);
@@ -128,7 +128,7 @@ export const api = {
       try {
         console.log('Fetching media metrics...');
         const queryString = new URLSearchParams(params).toString();
-        const response = await fetch(`${API_BASE_URL}/metrics/media?${queryString}`);
+        const response = await fetch(`${API_BASE_URL}/api/metrics/media?${queryString}`);
         return handleApiResponse(response);
       } catch (error) {
         console.error('Error fetching media metrics:', error);
