@@ -29,7 +29,8 @@ const useAuthStore = create((set) => ({
 
     initializePromise = (async () => {
       try {
-        const response = await fetch('http://localhost:5001/api/auth/me', {
+        //const response = await fetch('http://localhost:5001/api/auth/me', {
+        const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/auth/me`, {
           headers: {
             'Authorization': `Bearer ${token}`
           }
@@ -80,7 +81,8 @@ const useAuthStore = create((set) => ({
   login: async (credentials) => {
     set({ isLoading: true, error: null });
     try {
-      const response = await fetch('http://localhost:5001/api/auth/login', {
+      //const response = await fetch('http://localhost:5001/api/auth/login', {
+      const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/auth/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
