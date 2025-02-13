@@ -3,6 +3,7 @@ import {
   Globe,
   Share2,
   DollarSign,
+  BarChart3,
   ChevronLeft,
   ChevronRight,
   Settings,
@@ -13,6 +14,7 @@ import { Button } from "@/components/ui/button";
 import WebMetrics from './WebMetrics';
 import SocialMetrics from './SocialMetrics';
 import AdsMetrics from './AdsMetrics';
+import ServiceLevel from './ServiceLevel';
 import { DateRangePicker } from "@/components/ui/DateRangePicker";
 import Footer from '../ui/Footer';
 import useAuthStore from '../../store/authStore';
@@ -55,13 +57,12 @@ const Dashboard = () => {
   console.log("Rango inicial en Dashboard:", dateRange);
   console.log("Rango previo en Dashboard:", previousDateRange);
 
-
-
   const getActivePageTitle = () => {
     switch (activeTab) {
       case 'web': return 'Métricas Web';
       case 'social': return 'Redes Sociales';
       case 'ads': return 'Inversión en Medios';
+      case 'service': return 'Nivel de Servicio';
       default: return '';
     }
   };
@@ -81,13 +82,10 @@ const Dashboard = () => {
     const newFrom = new Date(dateRange.from.getFullYear(), dateRange.from.getMonth() + offset, 1);
   const newTo = new Date(newFrom.getFullYear(), newFrom.getMonth() + 1, 0); // Último día del mes
   
-  
   console.log("Cambiando mes: Desde", newFrom, "Hasta", newTo);
   setDateRange({ from: newFrom, to: newTo });
   };
   
-
-
   return (
     <div className="flex flex-col h-screen w-screen overflow-hidden">
       {/* Header Principal */}
@@ -177,6 +175,12 @@ const Dashboard = () => {
                 active={activeTab === 'ads'}
                 onClick={() => setActiveTab('ads')}
               />
+              <NavItem
+                icon={BarChart3}
+                label="Nivel de Servicio"
+                active={activeTab === 'service'}
+                onClick={() => setActiveTab('service')}
+              />
             </div>
 
             {/* Admin link */}
@@ -210,6 +214,10 @@ const Dashboard = () => {
 
               <TabsContent value="ads">
                 <AdsMetrics dateRange={dateRange} previousDateRange={previousDateRange}/>
+              </TabsContent>
+
+              <TabsContent value="service">
+                <ServiceLevel dateRange={dateRange} previousDateRange={previousDateRange}/>
               </TabsContent>
             </Tabs>
           </main>
