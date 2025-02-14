@@ -13,11 +13,26 @@ const fixedData = [
   { area: "Comercial Fritz", average: 4.1 },
 ];
 
-const questions = [
-  { text: "¿Comprendieron bien la visión y objetivos de los proyectos?", average: 4.2 },
-  { text: "¿Se cumplieron los tiempos de entrega esperados?", average: 3.8 },
-  { text: "¿El equipo respondió con rapidez y eficiencia?", average: 4.5 },
+const sections = [
+  { title: "Servicio de la Agencia", questions: 10 },
+  { title: "Diseño de Empaques", questions: 3 },
+  { title: "Calendario en Redes Sociales", questions: 6 },
+  { title: "Producción de Videos", questions: 5 },
+  { title: "Desarrollo Paginas Web", questions: 5 },
+  { title: "Lanzamiento de Productos Nuevos", questions: 4 },
+  { title: "Resultados y Reportes", questions: 7 },
 ];
+
+const questions = {
+  "Servicio de la Agencia": [
+    { text: "¿Comprendieron bien la visión y objetivos de los proyectos?", average: 4.2 },
+    { text: "¿Se cumplieron los tiempos de entrega esperados?", average: 3.8 },
+    { text: "¿El equipo respondió con rapidez y eficiencia?", average: 4.5 },
+  ],
+  "Diseño de Empaques": [
+    { text: "¿El diseño del empaque representó bien la marca?", average: 4.0 },
+  ],
+};
 
 const ServiceLevel = () => {
   const [selectedArea, setSelectedArea] = useState("Todos");
@@ -36,7 +51,7 @@ const ServiceLevel = () => {
         ))}
       </div>
 
-      {/* Gráfico de Barras con estilo ShadCN */}
+      {/* Gráfico de Barras */}
       <div className="bg-white shadow-md rounded-lg p-4">
         <h2 className="text-lg font-semibold mb-4">Comparación de Áreas</h2>
         <ResponsiveContainer width="100%" height={300}>
@@ -48,8 +63,8 @@ const ServiceLevel = () => {
           </BarChart>
         </ResponsiveContainer>
       </div>
-      
-      {/* Filtro por Área */}
+
+      {/* Selector de Área */}
       <Select onValueChange={setSelectedArea} defaultValue="Todos">
         <SelectTrigger>
           <SelectValue placeholder="Seleccionar área" />
@@ -62,30 +77,41 @@ const ServiceLevel = () => {
         </SelectContent>
       </Select>
 
-      {/* Tabla de Preguntas */}
-      <table className="w-full border-collapse border border-gray-200 mt-4">
-        <thead>
-          <tr className="bg-gray-100">
-            <th className="p-2 text-left">Pregunta</th>
-            <th className="p-2 text-center">Promedio</th>
-          </tr>
-        </thead>
-        <tbody>
-          {questions.map(({ text, average }, index) => (
-            <tr key={index} className="border-b">
-              <td className="p-2">{text}</td>
-              <td className="p-2 text-center font-bold">
-                <div className="flex items-center space-x-2">
-                  <div className="w-32 bg-gray-200 rounded-full h-4 overflow-hidden">
-                    <div className={`h-4 ${average >= 4 ? 'bg-green-500' : average >= 3 ? 'bg-yellow-500' : 'bg-red-500'}`} style={{ width: `${(average / 5) * 100}%` }}></div>
-                  </div>
-                  <span>{average.toFixed(1)}</span>
-                </div>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      {/* Secciones con Preguntas */}
+      <div className="grid grid-cols-1 gap-6">
+        {sections.map((section) => (
+          <Card key={section.title}>
+            <CardHeader>
+              <CardTitle>{section.title} ({section.questions} preguntas)</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <table className="w-full border-collapse border border-gray-200">
+                <thead>
+                  <tr className="bg-gray-100">
+                    <th className="p-2 text-left">Pregunta</th>
+                    <th className="p-2 text-center">Promedio</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {(questions[section.title] || []).map(({ text, average }, index) => (
+                    <tr key={index} className="border-b">
+                      <td className="p-2">{text}</td>
+                      <td className="p-2 text-center font-bold">
+                        <div className="flex items-center space-x-2">
+                          <div className="w-32 bg-gray-200 rounded-full h-4 overflow-hidden">
+                            <div className={`h-4 ${average >= 4 ? 'bg-green-500' : average >= 3 ? 'bg-yellow-500' : 'bg-red-500'}`} style={{ width: `${(average / 5) * 100}%` }}></div>
+                          </div>
+                          <span>{average.toFixed(1)}</span>
+                        </div>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
     </div>
   );
 };
