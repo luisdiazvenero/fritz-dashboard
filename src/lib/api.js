@@ -1,6 +1,9 @@
-// src/lib/api.js
-const API_BASE_URL = `${import.meta.env.VITE_BACKEND_URL}/api`; 
+// Modo Local
+//src/lib/api.js
 //const API_BASE_URL = 'http://localhost:5001/api';
+
+// servidor Vercel
+const API_BASE_URL = `${import.meta.env.VITE_BACKEND_URL}/api`; 
 
 const handleApiResponse = async (response) => {
   if (!response.ok) {

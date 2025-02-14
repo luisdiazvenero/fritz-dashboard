@@ -124,7 +124,7 @@ const MetricsControls = ({ onRefresh, onToggleAutoRefresh, isAutoRefreshEnabled,
       )}
     </Button>
 
-    
+
   </div>
 );
 
@@ -137,31 +137,31 @@ const WebMetrics = ({ dateRange, previousDateRange }) => {
   const { toast } = useToast();
 
 
-// Primero definimos showToast
-const showToast = (message, type = "default") => {
-  console.log('Llamando showToast con:', message); // Debug
-  toast({
-    title: type === "destructive" ? "Error" : "Notificación",
-    description: message,
-    duration: 3000,
-    variant: type
-  });
-};
+  // Primero definimos showToast
+  const showToast = (message, type = "default") => {
+    console.log('Llamando showToast con:', message); // Debug
+    toast({
+      title: type === "destructive" ? "Error" : "Notificación",
+      description: message,
+      duration: 3000,
+      variant: type
+    });
+  };
 
-// Luego lo usamos en handleToggleAutoRefresh
-const handleToggleAutoRefresh = () => {
-  if (isAutoRefreshEnabled) {
-    stopAutoRefresh('web');
-    setIsAutoRefreshEnabled(false);
-    showToast("Auto-actualización desactivada");
-  } else {
-    startAutoRefresh('web');
-    setIsAutoRefreshEnabled(true);
-    showToast("Auto-actualización activada");
-  }
-};
+  // Luego lo usamos en handleToggleAutoRefresh
+  const handleToggleAutoRefresh = () => {
+    if (isAutoRefreshEnabled) {
+      stopAutoRefresh('web');
+      setIsAutoRefreshEnabled(false);
+      showToast("Auto-actualización desactivada");
+    } else {
+      startAutoRefresh('web');
+      setIsAutoRefreshEnabled(true);
+      showToast("Auto-actualización activada");
+    }
+  };
 
-  
+
 
   const handleRefresh = async (forceRefresh = false) => {
     setIsRefreshing(true);
@@ -223,7 +223,7 @@ const handleToggleAutoRefresh = () => {
 
   return (
     <div className="space-y-12">
-      <MetricsControls 
+      <MetricsControls
         onRefresh={handleRefresh}
         onToggleAutoRefresh={handleToggleAutoRefresh}
         isAutoRefreshEnabled={isAutoRefreshEnabled}
@@ -233,91 +233,91 @@ const handleToggleAutoRefresh = () => {
 
       {/* Métricas Globales */}
       <section className="bg-white p-6 rounded-lg shadow-sm border-l-4 border-blue-500">
-  <SectionHeader 
-    icon={BarChart3}
-    title="Métricas Globales"
-    subtitle="Resumen general de todas las plataformas web"
-    color="bg-blue-500"
-  />
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-    <MetricCard 
-      title="Totales Fritz"
-      value={calculateTotalFritz(data?.data, dateRange)}
-      previousValue={0} // Este puede calcularse si tienes datos históricos similares
-      icon={<Globe2 className="h-6 w-6 text-blue-500" />}
-    />
-    <MetricCard 
-      title="Total Club 300"
-      value={calculateTotalClub300(data?.data, dateRange)}
-      previousValue={0} // Puedes calcular datos previos si tienes históricos
-      icon={Users}
-          title="Club 300"
-          subtitle="club300fritz.com"
-          
-          icon={<Users className="h-6 w-6 text-blue-500" />}
-    />
-  </div>
-  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-6">
-    <MetricCard 
-      title="Nuevos Fritz Lovers"
-      value={calculateMetricValue(data?.data, "Web", "Fritz International", "Nuevos Fritz Lover", dateRange)}
-      previousValue={calculateMetricValue(data?.data, "Web", "Fritz International", "Nuevos Fritz Lover", previousDateRange)}
-      icon="❤️"
-    />
-    <MetricCard 
-      title="Registros Club 300"
-      value={calculateMetricValue(media?.data?.data, "Inversión en Medios", "Conversiones", "Registros Club 300", dateRange)}
-      previousValue={calculateMetricValue(media?.data.data, "Inversión en Medios", "Conversiones", "Registros Club 300", previousDateRange)}
-  icon="📝"
-    />
-    <MetricCard 
-  title="Pagina Sorpresas"
-  value={calculateMetricValue(data?.data, "Web", "Fritz International", "Pagina Sorpresas", dateRange)}
-  previousValue={calculateMetricValue(data?.data, "Web", "Fritz International", "Pagina Sorpresas", previousDateRange)}
-  icon="🎁"
-/>
+        <SectionHeader
+          icon={BarChart3}
+          title="Métricas Globales"
+          subtitle="Resumen general de todas las plataformas web"
+          color="bg-blue-500"
+        />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <MetricCard
+            title="Totales Fritz"
+            value={calculateTotalFritz(data?.data, dateRange)}
+            previousValue={0} // Este puede calcularse si tienes datos históricos similares
+            icon={<Globe2 className="h-6 w-6 text-blue-500" />}
+          />
+          <MetricCard
+            title="Total Club 300"
+            value={calculateTotalClub300(data?.data, dateRange)}
+            previousValue={0} // Puedes calcular datos previos si tienes históricos
+            icon={Users}
+            title="Club 300"
+            subtitle="club300fritz.com"
 
-    <MetricCard 
-      title="Click en Jugar"
-      value={calculateMetricValue(data?.data, "Web", "Fritz International", "Clic en Jugar", dateRange)}
-      previousValue={calculateMetricValue(data?.data, "Web", "Fritz International", "Clic en Jugar", previousDateRange)}
-      icon="🎮"
-    />
-  </div>
-</section>
+            icon={<Users className="h-6 w-6 text-blue-500" />}
+          />
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-6">
+          <MetricCard
+            title="Nuevos Fritz Lovers"
+            value={calculateMetricValue(data?.data, "Web", "Fritz International", "Nuevos Fritz Lover", dateRange)}
+            previousValue={calculateMetricValue(data?.data, "Web", "Fritz International", "Nuevos Fritz Lover", previousDateRange)}
+            icon="❤️"
+          />
+          <MetricCard
+            title="Registros Club 300"
+            value={calculateMetricValue(media?.data?.data, "Inversión en Medios", "Conversiones", "Registros Club 300", dateRange)}
+            previousValue={calculateMetricValue(media?.data.data, "Inversión en Medios", "Conversiones", "Registros Club 300", previousDateRange)}
+            icon="📝"
+          />
+          <MetricCard
+            title="Pagina Sorpresas"
+            value={calculateMetricValue(data?.data, "Web", "Fritz International", "Pagina Sorpresas", dateRange)}
+            previousValue={calculateMetricValue(data?.data, "Web", "Fritz International", "Pagina Sorpresas", previousDateRange)}
+            icon="🎁"
+          />
+
+          <MetricCard
+            title="Click en Jugar"
+            value={calculateMetricValue(data?.data, "Web", "Fritz International", "Clic en Jugar", dateRange)}
+            previousValue={calculateMetricValue(data?.data, "Web", "Fritz International", "Clic en Jugar", previousDateRange)}
+            icon="🎮"
+          />
+        </div>
+      </section>
 
 
       <Separator className="my-8" />
 
       {/* Fritz International */}
       <section className="bg-white p-6 rounded-lg shadow-sm border-l-4 border-red-600">
-        <SectionHeader 
+        <SectionHeader
           icon={Globe2}
           title="Fritz International"
           subtitle="fritzinternational.us"
           color="bg-red-600"
         />
-        
+
         <div className="space-y-8">
           <div>
             <h3 className="text-lg font-semibold text-gray-700 mb-4">Páginas Principales</h3>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-              <MetricCard 
+              <MetricCard
                 title={<div className="flex items-center gap-2">🇻🇪 Venezuela</div>}
                 value={calculateMetricValue(data?.data, "Web", "Fritz International", "Home Venezuela", dateRange)}
                 previousValue={calculateMetricValue(data?.data, "Web", "Fritz International", "Home Venezuela", previousDateRange)}
               />
-              <MetricCard 
+              <MetricCard
                 title={<div className="flex items-center gap-2">🇵🇪 Perú</div>}
                 value={calculateMetricValue(data?.data, "Web", "Fritz International", "Home Peru", dateRange)}
                 previousValue={calculateMetricValue(data?.data, "Web", "Fritz International", "Home Peru", previousDateRange)}
               />
-              <MetricCard 
+              <MetricCard
                 title={<div className="flex items-center gap-2">🇨🇱 Chile</div>}
                 value={calculateMetricValue(data?.data, "Web", "Fritz International", "Home Chile", dateRange)}
                 previousValue={calculateMetricValue(data?.data, "Web", "Fritz International", "Home Chile", previousDateRange)}
               />
-              <MetricCard 
+              <MetricCard
                 title={<div className="flex items-center gap-2">🇺🇸 USA</div>}
                 value={calculateMetricValue(data?.data, "Web", "Fritz International", "Home Usa", dateRange)}
                 previousValue={calculateMetricValue(data?.data, "Web", "Fritz International", "Home Usa", previousDateRange)}
@@ -331,23 +331,23 @@ const handleToggleAutoRefresh = () => {
             </CardHeader>
             <CardContent>
               <ResponsiveContainer width="100%" height={400}>
-              <LineChart data={transformDataForChart(data?.data, "Fritz International", ["Home Venezuela", "Home Peru", "Home Chile", "Home Usa"])}>
-                <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
-                <XAxis 
-                  dataKey="date" 
-                  tickFormatter={formatDateForChart} // Formatear las fechas
-                />
-                <YAxis />
-                <Tooltip 
-                  formatter={(value, name, props) => [value, name]}
-                  labelFormatter={(label) => formatDateForChart(label)} // Formatear las etiquetas
-                />
-                <Legend />
-                <Line type="monotone" dataKey="Home Venezuela" name="🇻🇪 Venezuela" stroke="#1a73e8" strokeWidth={2} />
-                <Line type="monotone" dataKey="Home Peru" name="🇵🇪 Perú" stroke="#34a853" strokeWidth={2} />
-                <Line type="monotone" dataKey="Home Chile" name="🇨🇱 Chile" stroke="#fbbc04" strokeWidth={2} />
-                <Line type="monotone" dataKey="Home Usa" name="🇺🇸 USA" stroke="#ea4335" strokeWidth={2} />
-              </LineChart>
+                <LineChart data={transformDataForChart(data?.data, "Fritz International", ["Home Venezuela", "Home Peru", "Home Chile", "Home Usa"])}>
+                  <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
+                  <XAxis
+                    dataKey="date"
+                    tickFormatter={formatDateForChart} // Formatear las fechas
+                  />
+                  <YAxis />
+                  <Tooltip
+                    formatter={(value, name, props) => [value, name]}
+                    labelFormatter={(label) => formatDateForChart(label)} // Formatear las etiquetas
+                  />
+                  <Legend />
+                  <Line type="monotone" dataKey="Home Venezuela" name="🇻🇪 Venezuela" stroke="#1a73e8" strokeWidth={2} />
+                  <Line type="monotone" dataKey="Home Peru" name="🇵🇪 Perú" stroke="#34a853" strokeWidth={2} />
+                  <Line type="monotone" dataKey="Home Chile" name="🇨🇱 Chile" stroke="#fbbc04" strokeWidth={2} />
+                  <Line type="monotone" dataKey="Home Usa" name="🇺🇸 USA" stroke="#ea4335" strokeWidth={2} />
+                </LineChart>
               </ResponsiveContainer>
             </CardContent>
           </Card>
@@ -355,22 +355,22 @@ const handleToggleAutoRefresh = () => {
           <div>
             <h3 className="text-lg font-semibold text-gray-700 mb-4">Páginas de Contacto</h3>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-              <MetricCard 
+              <MetricCard
                 title={<div className="flex items-center gap-2">🇻🇪 Contacto</div>}
                 value={calculateMetricValue(data?.data, "Web", "Fritz International", "Contacto Venezuela", dateRange)}
                 previousValue={calculateMetricValue(data?.data, "Web", "Fritz International", "Contacto Venezuela", previousDateRange)}
               />
-              <MetricCard 
+              <MetricCard
                 title={<div className="flex items-center gap-2">🇵🇪 Contacto</div>}
                 value={calculateMetricValue(data?.data, "Web", "Fritz International", "Contacto Peru", dateRange)}
                 previousValue={calculateMetricValue(data?.data, "Web", "Fritz International", "Contacto Peru", previousDateRange)}
               />
-              <MetricCard 
+              <MetricCard
                 title={<div className="flex items-center gap-2">🇨🇱 Contacto</div>}
                 value={calculateMetricValue(data?.data, "Web", "Fritz International", "Contacto Chile", dateRange)}
                 previousValue={calculateMetricValue(data?.data, "Web", "Fritz International", "Contacto Chile", previousDateRange)}
               />
-              <MetricCard 
+              <MetricCard
                 title={<div className="flex items-center gap-2">🇺🇸 Contacto</div>}
                 value={calculateMetricValue(data?.data, "Web", "Fritz International", "Contacto Usa", dateRange)}
                 previousValue={calculateMetricValue(data?.data, "Web", "Fritz International", "Contacto Usa", previousDateRange)}
@@ -384,31 +384,31 @@ const handleToggleAutoRefresh = () => {
 
       {/* Club 300 */}
       <section className="bg-white p-6 rounded-lg shadow-sm border-l-4 border-orange-500">
-        <SectionHeader 
+        <SectionHeader
           icon={Users}
           title="Club 300"
           subtitle="club300fritz.com"
           color="bg-orange-500"
         />
-        
+
         <div className="space-y-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-            <MetricCard 
+            <MetricCard
               title="Home Club 300"
               value={calculateMetricValue(data?.data, "Web", "Club300", "Home Club300", dateRange)}
               previousValue={calculateMetricValue(data?.data, "Web", "Club300", "Home Club300", previousDateRange)}
             />
-            <MetricCard 
+            <MetricCard
               title="Página Registro"
               value={calculateMetricValue(data?.data, "Web", "Club300", "Pagina Registro", dateRange)}
               previousValue={calculateMetricValue(data?.data, "Web", "Club300", "Pagina Registro", previousDateRange)}
             />
-            <MetricCard 
+            <MetricCard
               title="Página Galería"
               value={calculateMetricValue(data?.data, "Web", "Club300", "Pagina Galeria", dateRange)}
               previousValue={calculateMetricValue(data?.data, "Web", "Club300", "Pagina Galeria", previousDateRange)}
             />
-            <MetricCard 
+            <MetricCard
               title="Otras Páginas"
               value={calculateMetricValue(data?.data, "Web", "Club300", "Otras Paginas", dateRange)}
               previousValue={calculateMetricValue(data?.data, "Web", "Club300", "Otras Registro", previousDateRange)}
@@ -421,23 +421,23 @@ const handleToggleAutoRefresh = () => {
             </CardHeader>
             <CardContent>
               <ResponsiveContainer width="100%" height={400}>
-              <LineChart data={transformDataForChart(data?.data, "Club300", ["Home Club300", "Pagina Registro", "Pagina Galeria", "Otras Paginas"])}>
-                <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
-                <XAxis
-                  dataKey="date" 
-                  tickFormatter={formatDateForChart} // Formatear las fechas
-                />
-                <YAxis />
-                <Tooltip 
-                  formatter={(value, name, props) => [value, name]}
-                  labelFormatter={(label) => formatDateForChart(label)} // Formatear las etiquetas
-                />
-                <Legend />
-                <Line type="monotone" dataKey="Home Club300" name="Home Club300" stroke="#1a73e8" strokeWidth={2} />
-                <Line type="monotone" dataKey="Pagina Registro" name="Pagina Registro" stroke="#34a853" strokeWidth={2} />
-                <Line type="monotone" dataKey="Pagina Galeria" name="Pagina Galeria" stroke="#fbbc04" strokeWidth={2} />
-                <Line type="monotone" dataKey="Otras Paginas" name="Otras Paginas" stroke="#ea4335" strokeWidth={2} />
-              </LineChart>
+                <LineChart data={transformDataForChart(data?.data, "Club300", ["Home Club300", "Pagina Registro", "Pagina Galeria", "Otras Paginas"])}>
+                  <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
+                  <XAxis
+                    dataKey="date"
+                    tickFormatter={formatDateForChart} // Formatear las fechas
+                  />
+                  <YAxis />
+                  <Tooltip
+                    formatter={(value, name, props) => [value, name]}
+                    labelFormatter={(label) => formatDateForChart(label)} // Formatear las etiquetas
+                  />
+                  <Legend />
+                  <Line type="monotone" dataKey="Home Club300" name="Home Club300" stroke="#1a73e8" strokeWidth={2} />
+                  <Line type="monotone" dataKey="Pagina Registro" name="Pagina Registro" stroke="#34a853" strokeWidth={2} />
+                  <Line type="monotone" dataKey="Pagina Galeria" name="Pagina Galeria" stroke="#fbbc04" strokeWidth={2} />
+                  <Line type="monotone" dataKey="Otras Paginas" name="Otras Paginas" stroke="#ea4335" strokeWidth={2} />
+                </LineChart>
               </ResponsiveContainer>
             </CardContent>
           </Card>

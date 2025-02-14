@@ -81,7 +81,9 @@ const useAuthStore = create((set) => ({
   login: async (credentials) => {
     set({ isLoading: true, error: null });
     try {
+      //local
       //const response = await fetch('http://localhost:5001/api/auth/login', {
+      // remoto 
       const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/auth/login`, {
         method: 'POST',
         headers: {
