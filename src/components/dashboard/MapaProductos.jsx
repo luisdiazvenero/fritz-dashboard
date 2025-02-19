@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { Img } from "react-image";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
-import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "@/components/ui/select";
 import {
     Table,
     TableBody,
@@ -14,15 +12,6 @@ import {
   } from "@/components/ui/table"
   
 import { Database, ImageOff } from 'lucide-react';
-import MetricCard from '../ui/MetricCard';
-import {
-    Table,
-    TableBody,
-    TableCell,
-    TableHead,
-    TableHeader,
-    TableRow,
-} from "@/components/ui/table"
 
 const SectionHeader = ({ icon: Icon, title, subtitle, color }) => (
     <div className="mb-6">
