@@ -15,6 +15,7 @@ import WebMetrics from './WebMetrics';
 import SocialMetrics from './SocialMetrics';
 import AdsMetrics from './AdsMetrics';
 import ServiceLevel from './ServiceLevel';
+import MapaProductos from './MapaProductos';
 import { DateRangePicker } from "@/components/ui/DateRangePicker";
 import Footer from '../ui/Footer';
 import useAuthStore from '../../store/authStore';
@@ -63,6 +64,7 @@ const Dashboard = () => {
       case 'social': return 'Redes Sociales';
       case 'ads': return 'Inversión en Medios';
       case 'service': return 'Nivel de Servicio';
+      case 'productos': return 'Mapa de Productos';
       default: return '';
     }
   };
@@ -181,6 +183,12 @@ const Dashboard = () => {
                 active={activeTab === 'service'}
                 onClick={() => setActiveTab('service')}
               />
+              <NavItem
+                icon={BarChart3}
+                label="Mapa de Productos"
+                active={activeTab === 'productos'}
+                onClick={() => setActiveTab('productos')}
+              />
             </div>
 
             {/* Admin link */}
@@ -218,6 +226,10 @@ const Dashboard = () => {
 
               <TabsContent value="service">
                 <ServiceLevel dateRange={dateRange} previousDateRange={previousDateRange}/>
+              </TabsContent>
+
+              <TabsContent value="productos">
+                <MapaProductos dateRange={dateRange} previousDateRange={previousDateRange}/>
               </TabsContent>
             </Tabs>
           </main>
