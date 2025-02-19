@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
 import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "@/components/ui/select";
-import { BarChart3, Globe2, Users } from 'lucide-react';
+import { Database } from 'lucide-react';
 import MetricCard from '../ui/MetricCard';
 import {
     Table,
@@ -33,14 +33,14 @@ const MapaProductos = () => {
         <div className="space-y-12">
             <section className="bg-white p-6 rounded-lg shadow-sm border-l-4 border-blue-500">
                 <SectionHeader
-                    icon={BarChart3}
+                    icon={Database}
                     title="Mapa de Productos - Categorías"
                     subtitle="Desarrollo de Nuevos Productos"
                     color="bg-blue-500"
                 />
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-0 mt-6">
+                    
                         <Card>
                             <CardHeader></CardHeader>
                             <CardContent></CardContent>
@@ -51,7 +51,7 @@ const MapaProductos = () => {
                             <CardContent></CardContent>
                         </Card>
 
-                    </div>
+                    
 
                 </div>
 
