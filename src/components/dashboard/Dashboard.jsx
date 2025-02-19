@@ -7,7 +7,8 @@ import {
   ChevronLeft,
   ChevronRight,
   Settings,
-  LogOut
+  LogOut,
+  Database
 } from 'lucide-react';
 import { Tabs, TabsContent } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
@@ -184,7 +185,7 @@ const Dashboard = () => {
                 onClick={() => setActiveTab('service')}
               />
               <NavItem
-                icon={BarChart3}
+                icon={Database}
                 label="Mapa de Productos"
                 active={activeTab === 'productos'}
                 onClick={() => setActiveTab('productos')}
