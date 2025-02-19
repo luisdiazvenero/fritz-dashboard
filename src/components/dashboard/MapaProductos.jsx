@@ -1,13 +1,23 @@
 import React, { useState } from "react";
+import { Img } from "react-image";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
 import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "@/components/ui/select";
-import { Database } from 'lucide-react';
+import {
+    Table,
+    TableBody,
+    TableCaption,
+    TableCell,
+    TableHead,
+    TableHeader,
+    TableRow,
+  } from "@/components/ui/table"
+  
+import { Database, ImageOff } from 'lucide-react';
 import MetricCard from '../ui/MetricCard';
 import {
     Table,
     TableBody,
-
     TableCell,
     TableHead,
     TableHeader,
@@ -29,6 +39,8 @@ const SectionHeader = ({ icon: Icon, title, subtitle, color }) => (
 );
 
 const MapaProductos = () => {
+    const imagenURL = "https://via.placeholder.com/500x300"; // URL de la imagen (puedes cambiarla)
+
     return (
         <div className="space-y-12">
             <section className="bg-white p-6 rounded-lg shadow-sm border-l-4 border-blue-500">
@@ -47,6 +59,42 @@ const MapaProductos = () => {
                                 <CardDescription>por Categoría</CardDescription>
                             </CardHeader>
                             <CardContent>
+                            <Table>
+                                <TableCaption>A list of your recent invoices.</TableCaption>
+                                <TableHeader>
+                                    <TableRow>
+                                    <TableHead className="w-[100px]">Invoice</TableHead>
+                                    <TableHead>Status</TableHead>
+                                    <TableHead>Method</TableHead>
+                                    <TableHead className="text-right">Amount</TableHead>
+                                    </TableRow>
+                                </TableHeader>
+                                <TableBody>
+                                    <TableRow>
+                                    <TableCell className="font-medium">
+                                    <Img
+                                        src={imagenURL || ""}
+                                        alt="Mapa de Productos"
+                                        className="rounded-lg shadow-md w-full h-full object-cover"
+                                        
+                                        // Placeholder mientras carga la imagen
+                                        loader={<Skeleton className="w-full h-full rounded-lg" />}
+                                        
+                                        // Placeholder cuando la imagen no está disponible
+                                        unloader={
+                                            <div className="flex items-center justify-center w-full h-full bg-gray-200 rounded-lg">
+                                            <ImageOff className="w-12 h-12 text-gray-500" />
+                                            <p className="text-gray-500 text-sm mt-2">Imagen no disponible</p>
+                                            </div>
+                                        }
+                                        />
+                          </TableCell>
+                                    <TableCell>Paid</TableCell>
+                                    <TableCell>Credit Card</TableCell>
+                                    <TableCell className="text-right">$250.00</TableCell>
+                                    </TableRow>
+                                </TableBody>
+                                </Table>
 
                             </CardContent>
                         </Card>
