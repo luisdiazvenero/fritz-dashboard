@@ -9,8 +9,8 @@ import {
     TableHead,
     TableHeader,
     TableRow,
-  } from "@/components/ui/table";
-import { Skeleton } from "@/components/ui/skeleton";  
+} from "@/components/ui/table";
+import { Skeleton } from "@/components/ui/skeleton";
 import { Database, ImageOff } from 'lucide-react';
 
 const SectionHeader = ({ icon: Icon, title, subtitle, color }) => (
@@ -28,7 +28,7 @@ const SectionHeader = ({ icon: Icon, title, subtitle, color }) => (
 );
 
 const MapaProductos = () => {
-    const imagenURL = "https://via.placeholder.com/100x100"; // URL de la imagen (puedes cambiarla)
+    const imagenURL = "https://fakeimg.pl/100x100?text=Mil"; // URL de la imagen (puedes cambiarla)
 
     return (
         <div className="space-y-12">
@@ -41,61 +41,61 @@ const MapaProductos = () => {
                 />
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    
-                        <Card>
-                            <CardHeader>
-                                <CardTitle>Productos</CardTitle>
-                                <CardDescription>por Categoría</CardDescription>
-                            </CardHeader>
-                            <CardContent>
+
+                    <Card>
+                        <CardHeader>
+                            <CardTitle>Productos</CardTitle>
+                            <CardDescription>por Categoría</CardDescription>
+                        </CardHeader>
+                        <CardContent>
                             <Table>
                                 <TableCaption>Productos por Categoría</TableCaption>
                                 <TableHeader>
                                     <TableRow>
-                                    <TableHead className="hidden w-[100px]">Imagen</TableHead>
-                                    <TableHead>Categoria</TableHead>
-                                    <TableHead>#</TableHead>
-                                    
+                                        <TableHead className="hidden w-[100px]">Imagen</TableHead>
+                                        <TableHead>Categoria</TableHead>
+                                        <TableHead>#</TableHead>
+
                                     </TableRow>
                                 </TableHeader>
                                 <TableBody>
                                     <TableRow>
-                                    <TableCell className="font-medium">
-                                    <Img
-                                        src={imagenURL || ""}
-                                        alt="Mapa de Productos"
-                                        className="rounded-lg shadow-md w-full h-full object-cover"
-                                        
-                                        // Placeholder mientras carga la imagen
-                                        loader={<Skeleton className="w-full h-full rounded-lg" />}
-                                        
-                                        
-                                        />
-                          </TableCell>
-                                    <TableCell>1</TableCell>
-                                    <TableCell>Cereales, Granos y  Carbohidratos</TableCell>
-                                    
+                                        <TableCell className="font-medium">
+                                            <Img
+                                                src={imagenURL || ""}
+                                                alt="Mapa de Productos"
+                                                className="rounded-lg shadow-md w-full h-full object-cover"
+
+                                                // Placeholder mientras carga la imagen
+                                                loader={<Skeleton className="w-full h-full rounded-lg" />}
+
+
+                                            />
+                                        </TableCell>
+                                        <TableCell>1</TableCell>
+                                        <TableCell>Cereales, Granos y  Carbohidratos</TableCell>
+
                                     </TableRow>
                                 </TableBody>
-                                </Table>
+                            </Table>
 
-                            </CardContent>
-                        </Card>
+                        </CardContent>
+                    </Card>
 
-                        <Card>
-                            <CardHeader>
-                                <CardTitle>Marcas Top</CardTitle>
-                                <CardDescription>por Categoría</CardDescription>
-                            </CardHeader>
-                            <CardContent>
-                                
-                            </CardContent>
-                        </Card>
-                    
+                    <Card>
+                        <CardHeader>
+                            <CardTitle>Marcas Top</CardTitle>
+                            <CardDescription>por Categoría</CardDescription>
+                        </CardHeader>
+                        <CardContent>
+
+                        </CardContent>
+                    </Card>
+
 
                 </div>
 
-            
+
 
 
             </section>
