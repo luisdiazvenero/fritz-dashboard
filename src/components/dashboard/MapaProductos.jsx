@@ -42,15 +42,24 @@ const MapaProductos = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     
                         <Card>
-                            <CardHeader></CardHeader>
-                            <CardContent></CardContent>
+                            <CardHeader>
+                                <CardTitle>Productos</CardTitle>
+                                <CardDescription>por Categoría</CardDescription>
+                            </CardHeader>
+                            <CardContent>
+
+                            </CardContent>
                         </Card>
 
                         <Card>
-                            <CardHeader></CardHeader>
-                            <CardContent></CardContent>
+                            <CardHeader>
+                                <CardTitle>Marcas Top</CardTitle>
+                                <CardDescription>por Categoría</CardDescription>
+                            </CardHeader>
+                            <CardContent>
+                                
+                            </CardContent>
                         </Card>
-
                     
 
                 </div>
