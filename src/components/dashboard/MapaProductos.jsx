@@ -9,8 +9,8 @@ import {
     TableHead,
     TableHeader,
     TableRow,
-  } from "@/components/ui/table"
-  
+  } from "@/components/ui/table";
+import { Skeleton } from "@/components/ui/skeleton";  
 import { Database, ImageOff } from 'lucide-react';
 
 const SectionHeader = ({ icon: Icon, title, subtitle, color }) => (
