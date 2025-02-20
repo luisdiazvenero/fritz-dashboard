@@ -66,7 +66,7 @@ const MapaProductos = () => {
                                             <Img
                                                 src={imagenURL || ""}
                                                 alt="Mapa de Productos"
-                                                className="w-[64px] rounded-sm"
+                                                className="w-[128px] h-[64px] rounded-sm"
                                                 // Placeholder mientras carga la imagen
                                                 loader={<Skeleton className="w-[64px] rounded-sm" />}
                                             />
