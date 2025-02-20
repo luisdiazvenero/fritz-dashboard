@@ -28,7 +28,7 @@ const SectionHeader = ({ icon: Icon, title, subtitle, color }) => (
 );
 
 const MapaProductos = () => {
-    const imagenURL = "https://fakeimg.pl/100x100?text=Mil"; // URL de la imagen (puedes cambiarla)
+    const imagenURL = "https://shipixen.com/placeholder.svg"; // URL de la imagen (puedes cambiarla)
 
     return (
         <div className="space-y-12">
@@ -52,7 +52,7 @@ const MapaProductos = () => {
                                 <TableCaption>Productos por Categoría</TableCaption>
                                 <TableHeader>
                                     <TableRow>
-                                        <TableHead className="hidden w-[100px]">Imagen</TableHead>
+                                        <TableHead className="w-[64px]"></TableHead>
                                         <TableHead>Categoria</TableHead>
                                         <TableHead>#</TableHead>
 
@@ -60,7 +60,7 @@ const MapaProductos = () => {
                                 </TableHeader>
                                 <TableBody>
                                     <TableRow>
-                                        <TableCell className="font-medium">
+                                        <TableCell className="w-[64px]">
                                             <Img
                                                 src={imagenURL || ""}
                                                 alt="Mapa de Productos"
