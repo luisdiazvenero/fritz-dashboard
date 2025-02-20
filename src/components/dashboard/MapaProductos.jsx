@@ -49,18 +49,20 @@ const MapaProductos = () => {
                         </CardHeader>
                         <CardContent>
                             <Table>
-                                <TableCaption>Productos por Categoría</TableCaption>
+                                
                                 <TableHeader>
                                     <TableRow>
-                                        <TableHead className="w-[64px]"></TableHead>
+                                    <TableHead className="w-[64px]"></TableHead>
+                                        <TableHead className="w-[128px]"></TableHead>
                                         <TableHead>Categoria</TableHead>
-                                        <TableHead>#</TableHead>
+                                        
 
                                     </TableRow>
                                 </TableHeader>
                                 <TableBody>
                                     <TableRow>
-                                        <TableCell className="w-[64px]">
+                                    <TableCell className="w-[64px]">1</TableCell>
+                                        <TableCell className="w-[128px]">
                                             <Img
                                                 src={imagenURL || ""}
                                                 alt="Mapa de Productos"
@@ -72,7 +74,7 @@ const MapaProductos = () => {
 
                                             />
                                         </TableCell>
-                                        <TableCell>1</TableCell>
+                                        
                                         <TableCell>Cereales, Granos y  Carbohidratos</TableCell>
 
                                     </TableRow>
