@@ -52,17 +52,17 @@ const MapaProductos = () => {
                                 
                                 <TableHeader>
                                     <TableRow>
-                                    <TableHead></TableHead>
-                                        <TableHead></TableHead>
-                                        <TableHead>Categoria</TableHead>
+                                        <TableHead className="pr-0"></TableHead>
+                                        <TableHead className="pr-0"></TableHead>
+                                        <TableHead className="pr-0">Categoria</TableHead>
                                         
 
                                     </TableRow>
                                 </TableHeader>
                                 <TableBody>
                                     <TableRow>
-                                    <TableCell >1</TableCell>
-                                        <TableCell>
+                                        <TableCell className="pr-0">1</TableCell>
+                                        <TableCell className="pr-0">
                                             <Img
                                                 src={imagenURL || ""}
                                                 alt="Mapa de Productos"
@@ -72,7 +72,7 @@ const MapaProductos = () => {
                                             />
                                         </TableCell>
                                         
-                                        <TableCell>Cereales, Granos y  Carbohidratos</TableCell>
+                                        <TableCell className="pr-0">Cereales, Granos y  Carbohidratos</TableCell>
 
                                     </TableRow>
                                 </TableBody>
