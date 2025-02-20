@@ -52,8 +52,8 @@ const MapaProductos = () => {
                                 
                                 <TableHeader>
                                     <TableRow>
-                                    <TableHead ></TableHead>
-                                        <TableHead ></TableHead>
+                                    <TableHead></TableHead>
+                                        <TableHead></TableHead>
                                         <TableHead>Categoria</TableHead>
                                         
 
@@ -66,12 +66,9 @@ const MapaProductos = () => {
                                             <Img
                                                 src={imagenURL || ""}
                                                 alt="Mapa de Productos"
-                                                className="w-[64px] rounded-sm w-full h-full object-cover"
-
+                                                className="w-[64px] rounded-sm"
                                                 // Placeholder mientras carga la imagen
-                                                loader={<Skeleton className="w-full h-full rounded-sm" />}
-
-
+                                                loader={<Skeleton className="w-[64px] rounded-sm" />}
                                             />
                                         </TableCell>
                                         
