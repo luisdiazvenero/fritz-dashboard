@@ -64,37 +64,44 @@ const MapaProductos = () => {
                                     
                                     <TableRow> 
                                         <TableCell className="p-2 w-12 text-center">
-                                        <span className="bg-blue-500 text-white text-sm font-black px-2 py-1 rounded-xl">1</span>
+                                        <span className="bg-red-600 text-white text-sm font-black px-2 py-1 rounded-xl">1</span>
                                         </TableCell>
                                         <TableCell className="p-0 text-center">
                                             <EmojiBox emojis={["🍚", "🫘", "🍞"]} />
                                         </TableCell>
-                                        <TableCell className="p-2 text-left">Cereales, Granos y  Carbohidratos</TableCell>
+                                        <TableCell className="p-2 text-left">
+                                            <span className="bg-red-100 text-red-600 font-bold px-2 py-1 rounded-md">Cereales, Granos y  Carbohidratos</span>
+                                        </TableCell>
                                         <TableCell className="p-2 text-left text-xs text-gray-500">Arroz, Harina, Pasta, Avena, Legumbres, Pan, Café, Cereales Azucarados</TableCell>
                                         <TableCell className="p-2 text-left">Amanecer, Mary, PAN, Primor</TableCell>
                                     </TableRow>
 
                                     <TableRow> 
                                         <TableCell className="p-2 w-12 text-center">
-                                        <span className="bg-blue-500 text-white text-sm font-black px-2 py-1 rounded-xl">2</span>
+                                        <span className="bg-yellow-600 text-white text-sm font-black px-2 py-1 rounded-xl">2</span>
                                         </TableCell>
                                         <TableCell className="p-0 text-center">
                                             <EmojiBox emojis={["🍎", "🥦", "🥕"]} />
                                         </TableCell>
 
-                                        <TableCell className="p-2 text-left">Frutas, verduras y Tubérculos</TableCell>
+                                        <TableCell className="p-2 text-left">
+                                            <span className="bg-yellow-100 text-yellow-600 font-bold px-2 py-1 rounded-md">Frutas, verduras y Tubérculos</span>
+                                        
+                                        </TableCell>
                                         <TableCell className="p-2 text-left text-xs text-gray-500">Frutas, Vegetales, Verduras, Tuberculos</TableCell>
                                         <TableCell className="p-2 text-left">Frutas, Vegetales, Verduras, Tuberculos</TableCell>
                                     </TableRow>
 
                                     <TableRow> 
                                         <TableCell className="p-2 w-12 text-center">
-                                        <span className="bg-blue-500 text-white text-sm font-black px-2 py-1 rounded-xl">3</span>
+                                        <span className="bg-orange-600 text-white text-sm font-black px-2 py-1 rounded-xl">3</span>
                                         </TableCell>
                                         <TableCell className="p-2 w-16 text-center">
                                          <EmojiBox emojis={["🍗", "🥩", "🐟"]} />
                                         </TableCell>
-                                        <TableCell className="p-2 text-left">Proteínas</TableCell>
+                                        <TableCell className="p-2 text-left">
+                                        <span className="bg-orange-100 text-orange-600 font-bold px-2 py-1 rounded-md">Proteínas</span>
+                                            </TableCell>
                                         <TableCell className="p-2 text-left text-xs text-gray-500">Pollo, Cerdo, Res, Pescado y mariscos, Cordero, Huevos
 </TableCell>
                                         <TableCell className="p-2 text-left">Alimentos El Tunal, del corral, Purolomo</TableCell>
@@ -102,24 +109,28 @@ const MapaProductos = () => {
 
                                     <TableRow> 
                                         <TableCell className="p-2 w-12 text-center">
-                                        <span className="bg-blue-500 text-white text-sm font-black px-2 py-1 rounded-xl">4</span>
+                                        <span className="bg-green-600 text-white text-sm font-black px-2 py-1 rounded-xl">4</span>
                                         </TableCell>
                                         <TableCell className="p-2 w-16 text-center">
                                             <EmojiBox emojis={["🥛", "🍦", "🧃"]} />
                                         </TableCell>
-                                        <TableCell className="p-2 text-left">Lácteos y derivados</TableCell>
+                                        <TableCell className="p-2 text-left">
+                                        <span className="bg-green-100 text-green-600 font-bold px-2 py-1 rounded-md">Lácteos y derivados</span>
+                                            </TableCell>
                                         <TableCell className="p-2 text-left text-xs text-gray-500">Leche, Bebidas lácteas, Yogurt, Mantequillas</TableCell>
                                         <TableCell className="p-2 text-left">Nestle, Paisa, Purisima</TableCell>
                                     </TableRow>
 
                                     <TableRow> 
                                         <TableCell className="p-2 w-12 text-center">
-                                        <span className="bg-blue-500 text-white text-sm font-black px-2 py-1 rounded-xl">5</span>
+                                        <span className="bg-cyan-600 text-white text-sm font-black px-2 py-1 rounded-xl">5</span>
                                         </TableCell>
                                         <TableCell className="p-2 w-16 text-center">
                                             <EmojiBox emojis={["🍖", "🌭", "🥓"]} />
                                         </TableCell>
-                                        <TableCell className="p-2 text-left">Embutidos</TableCell>
+                                        <TableCell className="p-2 text-left">
+                                        <span className="bg-cyan-100 text-cyan-600 font-bold px-2 py-1 rounded-md">Embutidos</span>
+                                            </TableCell>
                                         <TableCell className="p-2 text-left text-xs text-gray-500">Jamón, Salchicha, Mortadela, Morcilla, Chorizo, Salami
 </TableCell>
                                         <TableCell className="p-2 text-left">Plumrose, Purolomo, L´Prado</TableCell>
@@ -127,60 +138,70 @@ const MapaProductos = () => {
 
                                     <TableRow> 
                                         <TableCell className="p-2 w-12 text-center">
-                                        <span className="bg-blue-500 text-white text-sm font-black px-2 py-1 rounded-xl">6</span>
+                                        <span className="bg-blue-600 text-white text-sm font-black px-2 py-1 rounded-xl">6</span>
                                         </TableCell>
                                         <TableCell className="p-2 w-16 text-center">
                                         <EmojiBox emojis={["🫒", "🧈", "🥜"]} />
                                         </TableCell>
-                                        <TableCell className="p-2 text-left">Grasas y aceites</TableCell>
+                                        <TableCell className="p-2 text-left">
+                                        <span className="bg-blue-100 text-blue-600 font-bold px-2 py-1 rounded-md">Grasas y aceites</span>
+                                            </TableCell>
                                         <TableCell className="p-2 text-left text-xs text-gray-500">Aceite, Mantequilla de maní, Margarina, Otras grasas</TableCell>
                                         <TableCell className="p-2 text-left">Mavesa, Nelly, Vatel</TableCell>
                                     </TableRow>
 
                                     <TableRow> 
                                         <TableCell className="p-2 w-12 text-center">
-                                        <span className="bg-blue-500 text-white text-sm font-black px-2 py-1 rounded-xl">7</span>
+                                        <span className="bg-purple-600 text-white text-sm font-black px-2 py-1 rounded-xl">7</span>
                                         </TableCell>
                                         <TableCell className="p-2 w-16 text-center">
                                         <EmojiBox emojis={["🍯", "🍫", "🍪"]} />
                                         </TableCell>
-                                        <TableCell className="p-2 text-left">Dulces y Snack</TableCell>
+                                        <TableCell className="p-2 text-left">
+                                            <span className="bg-purple-100 text-purple-600 font-bold px-2 py-1 rounded-md">Dulces y Snack</span>
+                                        </TableCell>
                                         <TableCell className="p-2 text-left text-xs text-gray-500">Azucar y endulzantes, Gelatinas y pudin, Caramelos, Chocolates, Galletas y ponqués, Papas y tostones, Compotas y mermeladas, Helados, Frutos secos</TableCell>
                                         <TableCell className="p-2 text-left">Mondelez, Munchy, Nestle, Pepsico</TableCell>
                                     </TableRow>
 
                                     <TableRow> 
                                         <TableCell className="p-2 w-12 text-center">
-                                        <span className="bg-blue-500 text-white text-sm font-black px-2 py-1 rounded-xl">8</span>
+                                        <span className="bg-pink-500 text-white text-sm font-black px-2 py-1 rounded-xl">8</span>
                                         </TableCell>
                                         <TableCell className="p-2 w-16 text-center">
                                             <EmojiBox emojis={[ "💧", "🥤", "⚡"]} />
                                         </TableCell>
-                                        <TableCell className="p-2 text-left">Bebidas</TableCell>
+                                        <TableCell className="p-2 text-left">
+                                        <span className="bg-pink-100 text-pink-600 font-bold px-2 py-1 rounded-md">Bebidas</span>
+                                            </TableCell>
                                         <TableCell className="p-2 text-left text-xs text-gray-500">Jugo de frutas, Agua, Gaseosa, Malta, Bebidas achoco, Bebidas energizantes, Té</TableCell>
                                         <TableCell className="p-2 text-left">Coca Cola, Natulac, Nestle, Pepsi</TableCell>
                                     </TableRow>
 
                                     <TableRow> 
                                         <TableCell className="p-2 w-12 text-center">
-                                        <span className="bg-blue-500 text-white text-sm font-black px-2 py-1 rounded-xl">9</span>
+                                        <span className="bg-red-500 text-white text-sm font-black px-2 py-1 rounded-xl">9</span>
                                         </TableCell>
                                         <TableCell className="p-2 w-16 text-center">
                                         <EmojiBox emojis={["🥫", "🌶️", "🧂"]} />
                                         </TableCell>
-                                        <TableCell className="p-2 text-left">Salsas, aderezos y condimentos</TableCell>
+                                        <TableCell className="p-2 text-left">
+                                        <span className="bg-red-100 text-red-500 font-bold px-2 py-1 rounded-md">Salsas, aderezos y condimentos</span>
+                                            </TableCell>
                                         <TableCell className="p-2 text-left text-xs text-gray-500">Ketchup, Mostaza, Mayonesa, Salsas saborizadas, Vinagre, Sasonadores, Bases en polvo, Condimentos</TableCell>
                                         <TableCell className="p-2 text-left">Iberia, Kraft Heinz, Mc Cornick, Pampero</TableCell>
                                     </TableRow>
 
                                     <TableRow> 
                                         <TableCell className="p-2 w-12 text-center">
-                                        <span className="bg-blue-500 text-white text-sm font-black px-2 py-1 rounded-xl">10</span>
+                                        <span className="bg-gray-500 text-white text-sm font-black px-2 py-1 rounded-xl">10</span>
                                         </TableCell>
                                         <TableCell className="p-2 w-16 text-center">
                                             <EmojiBox emojis={["🧻", "🍽️", "♻️"]} />
                                         </TableCell>
-                                        <TableCell className="p-2 text-left">Desechables Food Service</TableCell>
+                                        <TableCell className="p-2 text-left">
+                                        <span className="bg-gray-200 text-gray-500 font-bold px-2 py-1 rounded-md">Desechables Food Service</span>
+                                            </TableCell>
                                         <TableCell className="p-2 text-left text-xs text-gray-500">Servilletas, Utensilios, Envases, Papel aluminio, Otros</TableCell>
                                         <TableCell className="p-2 text-left">Selva</TableCell>
                                     </TableRow>
