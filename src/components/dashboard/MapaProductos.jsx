@@ -126,7 +126,7 @@ const classifications = {
             <section className="bg-white p-6 rounded-lg shadow-sm border-l-4 border-blue-500">
                 <SectionHeader
                     icon={Database}
-                    title="Productos por Categoría"
+                    title="Categorías"
                     subtitle="Desarrollo de Nuevos Productos"
                     color="bg-blue-500"
                 />
@@ -181,7 +181,7 @@ const classifications = {
             <section className="bg-white p-6 rounded-lg shadow-sm border-l-4 border-red-500">
                 <SectionHeader
                     icon={Settings}
-                    title="Productos por Clasificación"
+                    title="Clasificación"
                     subtitle="Desarrollo de Nuevos Productos"
                     color="bg-red-500"
                 />
