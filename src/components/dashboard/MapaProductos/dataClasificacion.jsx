@@ -4,7 +4,7 @@ export const dataClasificacion = [
         lineaoperacion: "Línea de Emulsiones",
         producto: "Salsa Sabor a Maíz 240gr",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇵🇪", "🇨🇱"],
+        
         categoria: "Salsas, aderezos y condimentos",
         subcategoria: "Salsas saborizadas",
         marca: "Fritz",
@@ -15,7 +15,7 @@ export const dataClasificacion = [
         lineaoperacion: "Línea de Emulsiones",
         producto: "Salsa Sabor A Queso Cheddar 240gr",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇪🇸", "🇺🇸"],
+        
         categoria: "Salsas, aderezos y condimentos",
         subcategoria: "Salsas saborizadas",
         marca: "Fritz",
@@ -26,7 +26,7 @@ export const dataClasificacion = [
         lineaoperacion: "Línea de Emulsiones",
         producto: "Salsa Sabor A Tocineta 240gr",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇺🇸", "🇵🇪"],
+        
         categoria: "Salsas, aderezos y condimentos",
         subcategoria: "Salsas saborizadas",
         marca: "Fritz",
@@ -37,7 +37,7 @@ export const dataClasificacion = [
         lineaoperacion: "Línea de Emulsiones",
         producto: "Salsa Tártara 240gr",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇪🇸", "🇨🇱"], 
+        
         categoria: "Salsas, aderezos y condimentos",
         subcategoria: "Salsas saborizadas",
         marca: "Fritz",
@@ -48,7 +48,7 @@ export const dataClasificacion = [
         lineaoperacion: "Línea de Emulsiones",
         producto: "Mayonesa 240gr",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇨🇱", "🇵🇪"], 
+        
         categoria: "Salsas, aderezos y condimentos",
         subcategoria: "Salsas saborizadas",
         marca: "Fritz",
@@ -59,7 +59,7 @@ export const dataClasificacion = [
         lineaoperacion: "Línea de Emulsiones",
         producto: "Salsa Rosada 260gr",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇵🇪", "🇪🇸"], 
+        
         categoria: "Salsas, aderezos y condimentos",
         subcategoria: "Salsas saborizadas",
         marca: "Fritz",
@@ -70,7 +70,7 @@ export const dataClasificacion = [
         lineaoperacion: "Línea de Emulsiones",
         producto: "Aderezo de Mostaza y Miel 250gr",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇺🇸", "🇵🇪"], 
+        
         categoria: "Salsas, aderezos y condimentos",
         subcategoria: "Salsas saborizadas",
         marca: "Fritz",
@@ -81,7 +81,7 @@ export const dataClasificacion = [
         lineaoperacion: "Línea de Emulsiones",
         producto: "Mostaza Preparada 250gr",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇪🇸", "🇨🇱"], 
+        
         categoria: "Salsas, aderezos y condimentos",
         subcategoria: "Salsas saborizadas",
         marca: "Fritz",
@@ -92,7 +92,7 @@ export const dataClasificacion = [
         lineaoperacion: "Línea de Emulsiones",
         producto: "Hot. Salsa Sabor A Maíz 740gr",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇵🇪", "🇨🇱"], 
+         
         categoria: "Salsas, aderezos y condimentos",
         subcategoria: "Salsas saborizadas",
         marca: "Fritz",
@@ -103,7 +103,7 @@ export const dataClasificacion = [
         lineaoperacion: "Línea de Emulsiones",
         producto: "Hot. Salsa Sabor a Queso Cheddar 740gr",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇪🇸", "🇺🇸"], 
+         
         categoria: "Salsas, aderezos y condimentos",
         subcategoria: "Salsas saborizadas",
         marca: "Fritz",
@@ -114,7 +114,7 @@ export const dataClasificacion = [
         lineaoperacion: "Línea de Emulsiones",
         producto: "Salsa Sabor a Queso Cheddar Galón 3200gr",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇺🇸", "🇵🇪"], 
+        
         categoria: "Salsas, aderezos y condimentos",
         subcategoria: "Salsas saborizadas",
         marca: "Fritz",
@@ -125,7 +125,7 @@ export const dataClasificacion = [
         lineaoperacion: "Línea de Emulsiones",
         producto: "Preparado de Mayonesa Bolsa 1kg",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇪🇸", "🇨🇱"], 
+        
         categoria: "Salsas, aderezos y condimentos",
         subcategoria: "Salsas saborizadas",
         marca: "Fritz",
@@ -136,7 +136,7 @@ export const dataClasificacion = [
         lineaoperacion: "Línea de Emulsiones",
         producto: "Preparado de Mayonesa Bolsa 3,35kg",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇨🇱", "🇵🇪"], 
+        
         categoria: "Lácteos y derivados",
         subcategoria: "Salsas saborizadas",
         marca: "Fritz",
@@ -147,7 +147,7 @@ export const dataClasificacion = [
         lineaoperacion: "Línea de Emulsiones",
         producto: "Aderezo de Mostaza Bolsa 1kg",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇵🇪", "🇪🇸"], 
+        
         categoria: "Lácteos y derivados",
         subcategoria: "Salsas saborizadas",
         marca: "Fritz",
@@ -158,7 +158,7 @@ export const dataClasificacion = [
         lineaoperacion: "Línea de Emulsiones",
         producto: "Aderezo de Mostaza Bolsa 3,6kg",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇺🇸", "🇵🇪"], 
+        
         categoria: "Lácteos y derivados",
         subcategoria: "Salsas saborizadas",
         marca: "Fritz",
@@ -169,7 +169,7 @@ export const dataClasificacion = [
         lineaoperacion: "Línea de Emulsiones",
         producto: "Mostaza Galón 3800gr",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇪🇸", "🇨🇱"],
+        
         categoria: "Lácteos y derivados",
         subcategoria: "Mayonesa",
         marca: "Fritz",
@@ -180,7 +180,7 @@ export const dataClasificacion = [
         lineaoperacion: "Línea de Emulsiones",
         producto: "Hot. Salsa Tártara 740gr",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇵🇪", "🇨🇱"],
+        
         categoria: "Lácteos y derivados",
         subcategoria: "Mayonesa",
         marca: "Fritz",
@@ -191,7 +191,7 @@ export const dataClasificacion = [
         lineaoperacion: "Línea de Emulsiones",
         producto: "Hot. Mayonesa 750g",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇪🇸", "🇺🇸"],
+        
         categoria: "Lácteos y derivados",
         subcategoria: "Mayonesa",
         marca: "Fritz",
@@ -202,7 +202,7 @@ export const dataClasificacion = [
         lineaoperacion: "Línea de Emulsiones",
         producto: "Hot. Salsa Rosada 830gr",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇺🇸", "🇵🇪"],
+        
         categoria: "Lácteos y derivados",
         subcategoria: "Mayonesa",
         marca: "Fritz",
@@ -213,7 +213,7 @@ export const dataClasificacion = [
         lineaoperacion: "Línea de Emulsiones",
         producto: "Salsa Rosada Galón 3650gr",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇪🇸", "🇨🇱"],
+        
         categoria: "Lácteos y derivados",
         subcategoria: "Mayonesa",
         marca: "Fritz",
@@ -224,7 +224,7 @@ export const dataClasificacion = [
         lineaoperacion: "Línea de Emulsiones",
         producto: "Mayonesa Galón 3350gr",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇨🇱", "🇵🇪"],
+        
         categoria: "Lácteos y derivados",
         subcategoria: "Mayonesa",
         marca: "Fritz",
@@ -235,7 +235,7 @@ export const dataClasificacion = [
         lineaoperacion: "Línea de Emulsiones",
         producto: "Mayonesa medio galón 1,6kg",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇵🇪", "🇪🇸"],
+        
         categoria: "Lácteos y derivados",
         subcategoria: "Mayonesa",
         marca: "Fritz",
@@ -246,7 +246,7 @@ export const dataClasificacion = [
         lineaoperacion: "Línea de Emulsiones",
         producto: "Mayonesa Kilo 850gr",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇺🇸", "🇵🇪"],
+        
         categoria: "Lácteos y derivados",
         subcategoria: "Mayonesa",
         marca: "Fritz",
@@ -257,7 +257,7 @@ export const dataClasificacion = [
         lineaoperacion: "Línea de Emulsiones",
         producto: "Mostaza Kilo 950gr",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇪🇸", "🇨🇱"],
+        
         categoria: "Lácteos y derivados",
         subcategoria: "Mayonesa",
         marca: "Fritz",
@@ -268,7 +268,7 @@ export const dataClasificacion = [
         lineaoperacion: "Línea de Cocción",
         producto: "Salsa Picantina 260gr",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇨🇱", "🇵🇪"],
+        
         categoria: "Lácteos y derivados",
         subcategoria: "Mayonesa",
         marca: "Fritz",
@@ -279,7 +279,7 @@ export const dataClasificacion = [
         lineaoperacion: "Línea de Cocción",
         producto: "Salsa B.B.Q. 290gr",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇪🇸", "🇺🇸"],
+        
         categoria: "Lácteos y derivados",
         subcategoria: "Mayonesa",
         marca: "Fritz",
@@ -290,7 +290,7 @@ export const dataClasificacion = [
         lineaoperacion: "Línea de Cocción",
         producto: "Homotético Salsa BBQ 930gr",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇺🇸", "🇵🇪"],
+        
         categoria: "Grasas y aceites",
         subcategoria: "Condimentos",
         marca: "Fritz",
@@ -301,7 +301,7 @@ export const dataClasificacion = [
         lineaoperacion: "Línea de Cocción",
         producto: "Salsa B.B.Q. Galón 4100gr",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇵🇪", "🇨🇱"],
+        
         categoria: "Grasas y aceites",
         subcategoria: "Condimentos",
         marca: "Fritz",
@@ -312,7 +312,7 @@ export const dataClasificacion = [
         lineaoperacion: "Línea de Cocción",
         producto: "Homotético Salsa base de Tomate 850gr",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇨🇱", "🇪🇸"],
+        
         categoria: "Grasas y aceites",
         subcategoria: "Condimentos",
         marca: "Fritz",
@@ -323,7 +323,7 @@ export const dataClasificacion = [
         lineaoperacion: "Línea de Cocción",
         producto: "Salsa a Base de Tomate 1000 g",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇺🇸", "🇵🇪"],
+        
         categoria: "Grasas y aceites",
         subcategoria: "Condimentos",
         marca: "Fritz",
@@ -334,7 +334,7 @@ export const dataClasificacion = [
         lineaoperacion: "Línea de Cocción",
         producto: "Salsa a Base de Tomate 1,85 kg",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇪🇸", "🇨🇱"],
+        
         categoria: "Grasas y aceites",
         subcategoria: "Condimentos",
         marca: "Fritz",
@@ -345,7 +345,7 @@ export const dataClasificacion = [
         lineaoperacion: "Línea de Cocción",
         producto: "Salsa a Base De Tomate Bolsa 1kg",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇵🇪", "🇺🇸"],
+        
         categoria: "Grasas y aceites",
         subcategoria: "Condimentos",
         marca: "Fritz",
@@ -356,7 +356,7 @@ export const dataClasificacion = [
         lineaoperacion: "Línea de Cocción",
         producto: "Salsa a Base De Tomate Bolsa 3,85kg",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇨🇱", "🇪🇸"],
+        
         categoria: "Grasas y aceites",
         subcategoria: "Condimentos",
         marca: "Fritz",
@@ -367,7 +367,7 @@ export const dataClasificacion = [
         lineaoperacion: "Línea de Salsas Líquidas",
         producto: "Salsa de Ajo 300cm3",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇵🇪", "🇨🇱"],
+        
         categoria: "Grasas y aceites",
         subcategoria: "Condimentos",
         marca: "Fritz",
@@ -378,7 +378,7 @@ export const dataClasificacion = [
         lineaoperacion: "Línea de Salsas Líquidas",
         producto: "Salsa de Ajo 150cm3",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇪🇸", "🇺🇸"],
+        
         categoria: "Grasas y aceites",
         subcategoria: "Condimentos",
         marca: "Fritz",
@@ -389,7 +389,7 @@ export const dataClasificacion = [
         lineaoperacion: "Línea de Salsas Líquidas",
         producto: "Salsa de Soya 300 cm3",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇺🇸", "🇵🇪"],
+        
         categoria: "Grasas y aceites",
         subcategoria: "Condimentos",
         marca: "Fritz",
@@ -400,7 +400,7 @@ export const dataClasificacion = [
         lineaoperacion: "Línea de Salsas Líquidas",
         producto: "Salsa de Soya 150cm3",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇵🇪", "🇨🇱"],
+        
         categoria: "Grasas y aceites",
         subcategoria: "Condimentos",
         marca: "Fritz",
@@ -411,7 +411,7 @@ export const dataClasificacion = [
         lineaoperacion: "Línea de Salsas Líquidas",
         producto: "Salsa Inglesa 300 cm3",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇨🇱", "🇪🇸"],
+        
         categoria: "Grasas y aceites",
         subcategoria: "Condimentos",
         marca: "Fritz",
@@ -422,7 +422,7 @@ export const dataClasificacion = [
         lineaoperacion: "Línea de Salsas Líquidas",
         producto: "Salsa Inglesa 150 cm3",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇺🇸", "🇵🇪"],
+        
         categoria: "Grasas y aceites",
         subcategoria: "Condimentos",
         marca: "Fritz",
@@ -433,7 +433,7 @@ export const dataClasificacion = [
         lineaoperacion: "Línea de Salsas Líquidas",
         producto: "Sazonador a base de especias semilíquido 160cm3",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇪🇸", "🇨🇱"],
+        
         categoria: "Grasas y aceites",
         subcategoria: "Condimentos",
         marca: "Fritz",
@@ -444,7 +444,7 @@ export const dataClasificacion = [
         lineaoperacion: "Línea de Salsas Líquidas",
         producto: "Salsa de Ajo Galón 3600cm3",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇵🇪", "🇺🇸"],
+        
         categoria: "Grasas y aceites",
         subcategoria: "Condimentos",
         marca: "Fritz",
@@ -455,7 +455,7 @@ export const dataClasificacion = [
         lineaoperacion: "Línea de Salsas Líquidas",
         producto: "Salsa Inglesa Galón 3600cm3",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇨🇱", "🇪🇸"],
+        
         categoria: "Dulces y Snack",
         subcategoria: "Ketchup",
         marca: "Fritz",
@@ -466,7 +466,7 @@ export const dataClasificacion = [
         lineaoperacion: "Línea de Salsas Líquidas",
         producto: "Salsa de Soja Galón 3600cm3",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇵🇪", "🇨🇱"],
+        
         categoria: "Dulces y Snack",
         subcategoria: "Ketchup",
         marca: "Fritz",
@@ -477,7 +477,7 @@ export const dataClasificacion = [
         lineaoperacion: "Línea de Licuados",
         producto: "Salsa de Ají Dulce 250gr",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇵🇪", "🇨🇱"],
+        
         categoria: "Dulces y Snack",
         subcategoria: "Ketchup",
         marca: "Fritz",
@@ -488,7 +488,7 @@ export const dataClasificacion = [
         lineaoperacion: "Línea de Licuados",
         producto: "Salsa de Ají Picante 250gr",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇪🇸", "🇺🇸"],
+        
         categoria: "Dulces y Snack",
         subcategoria: "Ketchup",
         marca: "Fritz",
@@ -499,7 +499,7 @@ export const dataClasificacion = [
         lineaoperacion: "Línea de Licuados",
         producto: "Homotético Salsa Ají Picante 740grs",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇺🇸", "🇵🇪"],
+        
         categoria: "Dulces y Snack",
         subcategoria: "Ketchup",
         marca: "Fritz",
@@ -510,7 +510,7 @@ export const dataClasificacion = [
         lineaoperacion: "Línea de Licuados",
         producto: "Salsa Picantico Criollo 310gr",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇨🇱", "🇪🇸"],
+        
         categoria: "Dulces y Snack",
         subcategoria: "Ketchup",
         marca: "Fritz",
@@ -521,7 +521,7 @@ export const dataClasificacion = [
         lineaoperacion: "Línea de Papas y Queso",
         producto: "YIL Papas ralladas 160gr",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇵🇪", "🇨🇱"],
+        
         categoria: "Dulces y Snack",
         subcategoria: "Ketchup",
         marca: "Fritz",
@@ -532,7 +532,7 @@ export const dataClasificacion = [
         lineaoperacion: "Línea de Papas y Queso",
         producto: "YIL Papas ralladas 1kg",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇪🇸", "🇺🇸"],
+        
         categoria: "Dulces y Snack",
         subcategoria: "Ketchup",
         marca: "Fritz",
@@ -543,7 +543,7 @@ export const dataClasificacion = [
         lineaoperacion: "Línea de Papas y Queso",
         producto: "Queso de año 180gr",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇺🇸", "🇵🇪"],
+        
         categoria: "Dulces y Snack",
         subcategoria: "Ketchup",
         marca: "Fritz",
@@ -554,7 +554,7 @@ export const dataClasificacion = [
         lineaoperacion: "Línea de Papas y Queso",
         producto: "Queso de año 1kg",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇨🇱", "🇪🇸"],
+        
         categoria: "Dulces y Snack",
         subcategoria: "Ketchup",
         marca: "Fritz",
@@ -565,7 +565,7 @@ export const dataClasificacion = [
         lineaoperacion: "Línea de Bases Saborizadas",
         producto: "Mezcla para Preparar Salsa sabor a Maíz 45gr",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇵🇪", "🇨🇱"],
+        
         categoria: "Dulces y Snack",
         subcategoria: "Ketchup",
         marca: "Fritz",
@@ -576,7 +576,7 @@ export const dataClasificacion = [
         lineaoperacion: "Línea de Bases Saborizadas",
         producto: "Mezcla para Preparar Salsa Tártara 45gr",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇪🇸", "🇺🇸"],
+        
         categoria: "Dulces y Snack",
         subcategoria: "Ketchup",
         marca: "Fritz",
@@ -587,7 +587,7 @@ export const dataClasificacion = [
         lineaoperacion: "Línea de Bases Saborizadas",
         producto: "Mezcla para Preparar Salsa sabor a Tocineta 45gr",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇺🇸", "🇵🇪"],
+        
         categoria: "Dulces y Snack",
         subcategoria: "Ketchup",
         marca: "Fritz",
@@ -598,7 +598,7 @@ export const dataClasificacion = [
         lineaoperacion: "Línea de Bases Saborizadas",
         producto: "Mezcla para Preparar Salsa sabor a Queso Cheddar 45gr",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇨🇱", "🇪🇸"],
+        
         categoria: "Dulces y Snack",
         subcategoria: "Ketchup",
         marca: "Fritz",
@@ -609,7 +609,7 @@ export const dataClasificacion = [
         lineaoperacion: "Línea de Bases Saborizadas",
         producto: "Mezcla para Preparar Salsa sabor a Ajo Perejil 45gr",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇵🇪", "🇺🇸"],
+        
         categoria: "Dulces y Snack",
         subcategoria: "Ketchup",
         marca: "Fritz",
@@ -620,7 +620,7 @@ export const dataClasificacion = [
         lineaoperacion: "Línea de Mermes",
         producto: "Merme De Guayaba 290gr",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇵🇪", "🇨🇱"],
+        
         categoria: "Dulces y Snack",
         subcategoria: "Ketchup",
         marca: "Fritz",
@@ -631,7 +631,7 @@ export const dataClasificacion = [
         lineaoperacion: "Línea de Mermes",
         producto: "Merme Guanábana Y Papelón 280 gr",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇪🇸", "🇺🇸"],
+        
         categoria: "Salsas, aderezos y condimentos",
         subcategoria: "Mayonesa",
         marca: "Fritz",
@@ -642,7 +642,7 @@ export const dataClasificacion = [
         lineaoperacion: "Línea de Mermes",
         producto: "Merme Durazno 270gr",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇺🇸", "🇵🇪"],
+        
         categoria: "Salsas, aderezos y condimentos",
         subcategoria: "Mayonesa",
         marca: "Fritz",
@@ -653,7 +653,7 @@ export const dataClasificacion = [
         lineaoperacion: "Línea de Mermes",
         producto: "Aderezo a Base de Piña 'Ananá' 280gr",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇨🇱", "🇪🇸"],
+        
         categoria: "Salsas, aderezos y condimentos",
         subcategoria: "Mayonesa",
         marca: "Fritz",
@@ -664,7 +664,7 @@ export const dataClasificacion = [
         lineaoperacion: "Línea de Mermes",
         producto: "Sirope De Papelón Y Canela 310gr",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇵🇪", "🇨🇱"],
+        
         categoria: "Salsas, aderezos y condimentos",
         subcategoria: "Mayonesa",
         marca: "Fritz",
@@ -675,7 +675,7 @@ export const dataClasificacion = [
         lineaoperacion: "Consumo Masivo",
         producto: "Salsa Sabor a Maíz 240gr",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇵🇪", "🇨🇱"],
+        
         categoria: "Salsas, aderezos y condimentos",
         subcategoria: "Mayonesa",
         marca: "Fritz",
@@ -686,7 +686,7 @@ export const dataClasificacion = [
         lineaoperacion: "Consumo Masivo",
         producto: "Salsa Sabor A Queso Cheddar 240gr",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇪🇸", "🇺🇸"],
+        
         categoria: "Salsas, aderezos y condimentos",
         subcategoria: "Mayonesa",
         marca: "Fritz",
@@ -697,7 +697,7 @@ export const dataClasificacion = [
         lineaoperacion: "Consumo Masivo",
         producto: "Salsa Sabor A Tocineta 240gr",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇺🇸", "🇵🇪"],
+        
         categoria: "Salsas, aderezos y condimentos",
         subcategoria: "Mayonesa",
         marca: "Fritz",
@@ -708,7 +708,7 @@ export const dataClasificacion = [
         lineaoperacion: "Consumo Masivo",
         producto: "Salsa Tártara 240gr",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇨🇱", "🇪🇸"],
+        
         categoria: "Salsas, aderezos y condimentos",
         subcategoria: "Mayonesa",
         marca: "Fritz",
@@ -719,7 +719,7 @@ export const dataClasificacion = [
         lineaoperacion: "Consumo Masivo",
         producto: "Mayonesa 240gr",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇵🇪", "🇨🇱"],
+        
         categoria: "Salsas, aderezos y condimentos",
         subcategoria: "Mayonesa",
         marca: "Fritz",
@@ -730,7 +730,7 @@ export const dataClasificacion = [
         lineaoperacion: "Consumo Masivo",
         producto: "Aderezo de Mostaza y Miel 250gr",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇪🇸", "🇺🇸"],
+        
         categoria: "Salsas, aderezos y condimentos",
         subcategoria: "Mayonesa",
         marca: "Fritz",
@@ -741,7 +741,7 @@ export const dataClasificacion = [
         lineaoperacion: "Consumo Masivo",
         producto: "Mostaza Preparada 250gr",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇺🇸", "🇵🇪"],
+        
         categoria: "Salsas, aderezos y condimentos",
         subcategoria: "Mayonesa",
         marca: "Fritz",
@@ -752,7 +752,7 @@ export const dataClasificacion = [
         lineaoperacion: "Consumo Masivo",
         producto: "Salsa de Ají Dulce 250gr",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇨🇱", "🇪🇸"],
+        
         categoria: "Salsas, aderezos y condimentos",
         subcategoria: "Mayonesa",
         marca: "Fritz",
@@ -763,7 +763,7 @@ export const dataClasificacion = [
         lineaoperacion: "Consumo Masivo",
         producto: "Salsa de Ají Picante 250gr",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇵🇪", "🇨🇱"],
+        
         categoria: "Salsas, aderezos y condimentos",
         subcategoria: "Mayonesa",
         marca: "Fritz",
@@ -774,7 +774,7 @@ export const dataClasificacion = [
         lineaoperacion: "Consumo Masivo",
         producto: "Salsa Rosada 260gr",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇪🇸", "🇺🇸"],
+        
         categoria: "Salsas, aderezos y condimentos",
         subcategoria: "Mayonesa",
         marca: "Fritz",
@@ -785,7 +785,7 @@ export const dataClasificacion = [
         lineaoperacion: "Consumo Masivo",
         producto: "Salsa Picantina 260gr",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇺🇸", "🇵🇪"],
+        
         categoria: "Salsas, aderezos y condimentos",
         subcategoria: "Mayonesa",
         marca: "Fritz",
@@ -796,7 +796,7 @@ export const dataClasificacion = [
         lineaoperacion: "Consumo Masivo",
         producto: "Aderezo a Base de Piña 'Ananá' 280gr",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇨🇱", "🇪🇸"],
+        
         categoria: "Salsas, aderezos y condimentos",
         subcategoria: "Mayonesa",
         marca: "Fritz",
@@ -807,7 +807,7 @@ export const dataClasificacion = [
         lineaoperacion: "Consumo Masivo",
         producto: "Salsa B.B.Q. 290gr",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇵🇪", "🇺🇸"],
+        
         categoria: "Salsas, aderezos y condimentos",
         subcategoria: "Mayonesa",
         marca: "Fritz",
@@ -818,7 +818,7 @@ export const dataClasificacion = [
         lineaoperacion: "Consumo Masivo",
         producto: "Sirope De Papelón Y Canela 310gr",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇨🇱", "🇪🇸"],
+        
         categoria: "Salsas, aderezos y condimentos",
         subcategoria: "Mayonesa",
         marca: "Fritz",
@@ -829,7 +829,7 @@ export const dataClasificacion = [
         lineaoperacion: "Consumo Masivo",
         producto: "Merme De Guayaba 290gr",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇵🇪", "🇨🇱"],
+        
         categoria: "Salsas, aderezos y condimentos",
         subcategoria: "Mayonesa",
         marca: "Fritz",
@@ -840,7 +840,7 @@ export const dataClasificacion = [
         lineaoperacion: "Consumo Masivo",
         producto: "Merme Guanábana Y Papelón 280 gr",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇪🇸", "🇺🇸"],
+        
         categoria: "Salsas, aderezos y condimentos",
         subcategoria: "Mayonesa",
         marca: "Fritz",
@@ -851,7 +851,7 @@ export const dataClasificacion = [
         lineaoperacion: "Consumo Masivo",
         producto: "Merme Durazno 270gr",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇺🇸", "🇵🇪"],
+        
         categoria: "Salsas, aderezos y condimentos",
         subcategoria: "Mayonesa",
         marca: "Fritz",
@@ -862,7 +862,7 @@ export const dataClasificacion = [
         lineaoperacion: "Consumo Masivo",
         producto: "Homotético Salsa Sabor A Maíz 740gr",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇨🇱", "🇪🇸"],
+        
         categoria: "Salsas, aderezos y condimentos",
         subcategoria: "Mayonesa",
         marca: "Fritz",
@@ -873,7 +873,7 @@ export const dataClasificacion = [
         lineaoperacion: "Consumo Masivo",
         producto: "Homotético Salsa Sabor A Queso Cheddar 740gr",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇵🇪", "🇺🇸"],
+        
         categoria: "Bebidas",
         subcategoria: "Sasonadores",
         marca: "Fritz",
@@ -884,7 +884,7 @@ export const dataClasificacion = [
         lineaoperacion: "Consumo Masivo",
         producto: "Homotético Salsa Tártara 740gr",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇨🇱", "🇪🇸"],
+        
         categoria: "Bebidas",
         subcategoria: "Sasonadores",
         marca: "Fritz",
@@ -895,7 +895,7 @@ export const dataClasificacion = [
         lineaoperacion: "Consumo Masivo",
         producto: "Homotético Mayonesa 750g",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇵🇪", "🇨🇱"],
+        
         categoria: "Bebidas",
         subcategoria: "Sasonadores",
         marca: "Fritz",
@@ -906,7 +906,7 @@ export const dataClasificacion = [
         lineaoperacion: "Consumo Masivo",
         producto: "Homotético Salsa Ají Picante 740grs",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇪🇸", "🇺🇸"],
+        
         categoria: "Bebidas",
         subcategoria: "Sasonadores",
         marca: "Fritz",
@@ -917,7 +917,7 @@ export const dataClasificacion = [
         lineaoperacion: "Consumo Masivo",
         producto: "Homotético Salsa Rosada 830gr",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇺🇸", "🇵🇪"],
+        
         categoria: "Bebidas",
         subcategoria: "Sasonadores",
         marca: "Fritz",
@@ -928,7 +928,7 @@ export const dataClasificacion = [
         lineaoperacion: "Consumo Masivo",
         producto: "Mezcla para Salsa sabor a Maíz 45gr",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇨🇱", "🇪🇸"],
+        
         categoria: "Bebidas",
         subcategoria: "Sasonadores",
         marca: "Fritz",
@@ -939,7 +939,7 @@ export const dataClasificacion = [
         lineaoperacion: "Consumo Masivo",
         producto: "YIL Papas ralladas 160gr",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇵🇪", "🇨🇱"],
+        
         categoria: "Bebidas",
         subcategoria: "Sasonadores",
         marca: "Fritz",
@@ -950,7 +950,7 @@ export const dataClasificacion = [
         lineaoperacion: "Consumo Masivo",
         producto: "Queso de año 180gr",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇪🇸", "🇺🇸"],
+        
         categoria: "Bebidas",
         subcategoria: "Sasonadores",
         marca: "Fritz",
@@ -961,7 +961,7 @@ export const dataClasificacion = [
         lineaoperacion: "Food Service",
         producto: "Salsa A Base De Tomate Bolsa 3850gr",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇵🇪", "🇨🇱"],
+        
         categoria: "Bebidas",
         subcategoria: "Sasonadores",
         marca: "Fritz",
@@ -972,7 +972,7 @@ export const dataClasificacion = [
         lineaoperacion: "Food Service",
         producto: "Salsa A Base De Tomate Bolsa 1000gr",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇪🇸", "🇺🇸"],
+        
         categoria: "Bebidas",
         subcategoria: "Sasonadores",
         marca: "Fritz",
@@ -983,7 +983,7 @@ export const dataClasificacion = [
         lineaoperacion: "Food Service",
         producto: "Mostaza Kilo 950gr",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇺🇸", "🇵🇪"],
+        
         categoria: "Bebidas",
         subcategoria: "Sasonadores",
         marca: "Fritz",
@@ -994,7 +994,7 @@ export const dataClasificacion = [
         lineaoperacion: "Food Service",
         producto: "Mostaza Galón 3800gr",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇨🇱", "🇪🇸"],
+        
         categoria: "Bebidas",
         subcategoria: "Sasonadores",
         marca: "Fritz",
@@ -1005,7 +1005,7 @@ export const dataClasificacion = [
         lineaoperacion: "Food Service",
         producto: "Aderezo de Mostaza Bolsa 1000gr",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇵🇪", "🇨🇱"],
+        
         categoria: "Bebidas",
         subcategoria: "Sasonadores",
         marca: "Fritz",
@@ -1016,7 +1016,7 @@ export const dataClasificacion = [
         lineaoperacion: "Food Service",
         producto: "Aderezo de Mostaza Bolsa-Galón 4000gr",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇪🇸", "🇺🇸"],
+        
         categoria: "Bebidas",
         subcategoria: "Sasonadores",
         marca: "Fritz",
@@ -1027,7 +1027,7 @@ export const dataClasificacion = [
         lineaoperacion: "Food Service",
         producto: "Salsa B.B.Q. Galón 4100gr",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇺🇸", "🇵🇪"],
+        
         categoria: "Bebidas",
         subcategoria: "Sasonadores",
         marca: "Fritz",
@@ -1038,7 +1038,7 @@ export const dataClasificacion = [
         lineaoperacion: "Food Service",
         producto: "Salsa B.B.Q. 2kg",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇨🇱", "🇪🇸"],
+        
         categoria: "Bebidas",
         subcategoria: "Sasonadores",
         marca: "Fritz",
@@ -1049,7 +1049,7 @@ export const dataClasificacion = [
         lineaoperacion: "Food Service",
         producto: "Salsa Sabor A Queso Cheddar Galón 3200gr",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇵🇪", "🇨🇱"],
+        
         categoria: "Bebidas",
         subcategoria: "Sasonadores",
         marca: "Fritz",
@@ -1060,7 +1060,7 @@ export const dataClasificacion = [
         lineaoperacion: "Food Service",
         producto: "Salsa Rosada Galón 3650gr",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇪🇸", "🇺🇸"],
+        
         categoria: "Bebidas",
         subcategoria: "Sasonadores",
         marca: "Fritz",
@@ -1071,7 +1071,7 @@ export const dataClasificacion = [
         lineaoperacion: "Food Service",
         producto: "Mayonesa Galón 3350gr",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇺🇸", "🇵🇪"],
+        
         categoria: "Bebidas",
         subcategoria: "Sasonadores",
         marca: "Fritz",
@@ -1082,7 +1082,7 @@ export const dataClasificacion = [
         lineaoperacion: "Food Service",
         producto: "Mayonesa Kilo 850gr",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇨🇱", "🇪🇸"],
+        
         categoria: "Bebidas",
         subcategoria: "Sasonadores",
         marca: "Fritz",
@@ -1093,7 +1093,7 @@ export const dataClasificacion = [
         lineaoperacion: "Food Service",
         producto: "Preparado de Mayonesa Bolsa 1000gr",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇵🇪", "🇺🇸"],
+        
         categoria: "Bebidas",
         subcategoria: "Sasonadores",
         marca: "Fritz",
@@ -1104,7 +1104,7 @@ export const dataClasificacion = [
         lineaoperacion: "Food Service",
         producto: "Preparado de Mayonesa Bolsa 3,35kg",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇨🇱", "🇪🇸"],
+        
         categoria: "Bebidas",
         subcategoria: "Sasonadores",
         marca: "Fritz",
@@ -1115,7 +1115,7 @@ export const dataClasificacion = [
         lineaoperacion: "Food Service",
         producto: "Salsa de Ajo Galón 3600cm3",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇵🇪", "🇨🇱"],
+        
         categoria: "Bebidas",
         subcategoria: "Sasonadores",
         marca: "Fritz",
@@ -1126,7 +1126,7 @@ export const dataClasificacion = [
         lineaoperacion: "Food Service",
         producto: "Salsa Inglesa Galón 3600cm3",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇪🇸", "🇺🇸"],
+        
         categoria: "Bebidas",
         subcategoria: "Sasonadores",
         marca: "Fritz",
@@ -1137,7 +1137,7 @@ export const dataClasificacion = [
         lineaoperacion: "Food Service",
         producto: "Salsa de Soja Galón 3600cm3",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇺🇸", "🇵🇪"],
+        
         categoria: "Bebidas",
         subcategoria: "Sasonadores",
         marca: "Fritz",
@@ -1148,7 +1148,7 @@ export const dataClasificacion = [
         lineaoperacion: "Food Service",
         producto: "Homotético Salsa Sabor A Maíz 740gr",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇨🇱", "🇪🇸"],
+        
         categoria: "Bebidas",
         subcategoria: "Sasonadores",
         marca: "Fritz",
@@ -1159,7 +1159,7 @@ export const dataClasificacion = [
         lineaoperacion: "Food Service",
         producto: "Homotético Salsa Sabor A Queso Cheddar 740gr",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇵🇪", "🇺🇸"],
+        
         categoria: "Bebidas",
         subcategoria: "Sasonadores",
         marca: "Fritz",
@@ -1170,7 +1170,7 @@ export const dataClasificacion = [
         lineaoperacion: "Food Service",
         producto: "Homotético Salsa Tártara 740gr",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇨🇱", "🇪🇸"],
+        
         categoria: "Bebidas",
         subcategoria: "Sasonadores",
         marca: "Fritz",
@@ -1181,7 +1181,7 @@ export const dataClasificacion = [
         lineaoperacion: "Food Service",
         producto: "Homotético Mayonesa 750g",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇵🇪", "🇨🇱"],
+        
         categoria: "Bebidas",
         subcategoria: "Sasonadores",
         marca: "Fritz",
@@ -1192,7 +1192,7 @@ export const dataClasificacion = [
         lineaoperacion: "Food Service",
         producto: "Homotético Salsa Ají Picante 740grs",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇪🇸", "🇺🇸"],
+        
         categoria: "Salsas, aderezos y condimentos",
         subcategoria: "Mostaza",
         marca: "Fritz",
@@ -1203,7 +1203,7 @@ export const dataClasificacion = [
         lineaoperacion: "Food Service",
         producto: "Homotético Salsa Rosada 830gr",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇺🇸", "🇵🇪"],
+        
         categoria: "Salsas, aderezos y condimentos",
         subcategoria: "Mostaza",
         marca: "Fritz",
@@ -1214,7 +1214,7 @@ export const dataClasificacion = [
         lineaoperacion: "Food Service",
         producto: "Mezcla para Preparar Salsa sabor a Maíz 45gr",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇨🇱", "🇪🇸"],
+        
         categoria: "Salsas, aderezos y condimentos",
         subcategoria: "Mostaza",
         marca: "Fritz",
@@ -1225,7 +1225,7 @@ export const dataClasificacion = [
         lineaoperacion: "Food Service",
         producto: "Mezcla para Preparar Salsa Tártara 45gr",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇵🇪", "🇨🇱"],
+        
         categoria: "Salsas, aderezos y condimentos",
         subcategoria: "Mostaza",
         marca: "Fritz",
@@ -1236,7 +1236,7 @@ export const dataClasificacion = [
         lineaoperacion: "Food Service",
         producto: "Mezcla para Preparar Salsa sabor a Tocineta 45gr",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇪🇸", "🇺🇸"],
+        
         categoria: "Salsas, aderezos y condimentos",
         subcategoria: "Mostaza",
         marca: "Fritz",
@@ -1247,7 +1247,7 @@ export const dataClasificacion = [
         lineaoperacion: "Food Service",
         producto: "Mezcla para Preparar Salsa sabor a Queso Cheddar 45gr",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇺🇸", "🇵🇪"],
+        
         categoria: "Salsas, aderezos y condimentos",
         subcategoria: "Mostaza",
         marca: "Fritz",
@@ -1258,7 +1258,7 @@ export const dataClasificacion = [
         lineaoperacion: "Food Service",
         producto: "YIL Papas ralladas 160gr",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇨🇱", "🇪🇸"],
+        
         categoria: "Salsas, aderezos y condimentos",
         subcategoria: "Mostaza",
         marca: "Fritz",
@@ -1269,7 +1269,7 @@ export const dataClasificacion = [
         lineaoperacion: "Food Service",
         producto: "YIL Papas ralladas 1kg",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇵🇪", "🇨🇱"],
+        
         categoria: "Salsas, aderezos y condimentos",
         subcategoria: "Mostaza",
         marca: "Fritz",
@@ -1280,7 +1280,7 @@ export const dataClasificacion = [
         lineaoperacion: "Food Service",
         producto: "Queso de año 180gr",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇪🇸", "🇺🇸"],
+        
         categoria: "Salsas, aderezos y condimentos",
         subcategoria: "Mostaza",
         marca: "Fritz",
@@ -1291,7 +1291,7 @@ export const dataClasificacion = [
         lineaoperacion: "Food Service",
         producto: "Queso de año 1kg",
         imagen: "/placeholder.svg",
-        disponible: ["🇻🇪", "🇵🇪", "🇨🇱"],
+        
         categoria: "Salsas, aderezos y condimentos",
         subcategoria: "Mostaza",
         marca: "Fritz",
@@ -1301,5 +1301,4 @@ export const dataClasificacion = [
 
 ];
 
-const jsonData = JSON.stringify(dataClasificacion, null, 2); // Convertir a JSON formateado
-console.log(jsonData);
+console.log(JSON.stringify(dataClasificacion, null, 2));

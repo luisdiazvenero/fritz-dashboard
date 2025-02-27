@@ -1,3 +1,5 @@
+import { DataTableColumnHeader } from "@/components/ui/DataTableColumnHeader";
+
 // Colores para el Tipo de producto
 const typeColors = {
     "Operaciones": "bg-red-10 text-red-700",
@@ -53,7 +55,9 @@ const categoryColors = {
       },
     {
         accessorKey: "producto",
-        header: "Producto",
+        //header: "Producto",
+        header: ({ column }) => <DataTableColumnHeader column={column} title="Producto" />,
+        enableSorting: true,
         cell: ({ row }) => (
           <span className="text-gray-900 font-semibold">
             {row.original.producto}
@@ -63,7 +67,9 @@ const categoryColors = {
       },
       {
         accessorKey: "categoria",
-        header: "Categoría",
+        //header: "Categoría",
+        header: ({ column }) => <DataTableColumnHeader column={column} title="Categoría" />,
+        enableSorting: true,
         cell: ({ row }) => {
             const colorClass = categoryColors[row.original.categoria] || "bg-gray-100 text-gray-600";
             return (
@@ -78,7 +84,9 @@ const categoryColors = {
       },
       {
         accessorKey: "subcategoria",
-        header: "Sub Categoría",
+        //header: "Sub Categoría",
+        header: ({ column }) => <DataTableColumnHeader column={column} title="Subcategoría" />,
+    enableSorting: true,
         cell: ({ row }) => (
           <span className="text-gray-900 text-xs ">
             {row.original.subcategoria}
@@ -88,7 +96,9 @@ const categoryColors = {
       },
       {
         accessorKey: "lineaoperacion",
-        header: "Linea de Operación",
+        //header: "Linea de Operación",
+        header: ({ column }) => <DataTableColumnHeader column={column} title="Línea de Operación" />,
+    enableSorting: true,
         cell: ({ row }) => (
           <span className="text-gray-700 text-xs font-medium">
             {row.original.lineaoperacion}
@@ -96,7 +106,9 @@ const categoryColors = {
         ),
         size: 150,
       },
-    {
+    
+      /* No va Tipo
+      {
       accessorKey: "tipo",
       header: "Tipo",
       cell: ({ row }) => {
@@ -110,9 +122,12 @@ const categoryColors = {
       },
       size: 100,
     },
+    */
     {
         accessorKey: "clasificacioncliente",
-        header: "Cliente",
+        //header: "Clasificación Cliente",
+        header: ({ column }) => <DataTableColumnHeader column={column} title="Clasificación Cliente" />,
+    enableSorting: true,
         cell: ({ row }) => (
             <span className="text-gray-900 text-xs">
               {row.original.clasificacioncliente}
@@ -122,7 +137,9 @@ const categoryColors = {
         },
         {
             accessorKey: "marca",
-            header: "Marca",
+            //header: "Marca",
+            header: ({ column }) => <DataTableColumnHeader column={column} title="Marca" />,
+    enableSorting: true,
             cell: ({ row }) => (
                 <span className="text-gray-900 ">
                   {row.original.marca}
@@ -131,7 +148,7 @@ const categoryColors = {
               size: 100,
             },
     
-    
+    /* No va pais
     {
       accessorKey: "disponible",
       header: "Pais",
@@ -144,5 +161,6 @@ const categoryColors = {
       ),
       size: 100,
     },
+    */
   ];
   

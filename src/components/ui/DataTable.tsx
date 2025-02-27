@@ -1,5 +1,5 @@
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { useReactTable, getCoreRowModel, flexRender,getPaginationRowModel } from "@tanstack/react-table";
+import { useReactTable, getCoreRowModel, flexRender, getPaginationRowModel, getSortedRowModel } from "@tanstack/react-table";
 import { ChevronLeft, ChevronRight, ChevronsLeft, ChevronsRight } from "lucide-react";
 import {
     Select,
@@ -11,12 +11,14 @@ import {
   
 
 export function DataTable({ columns, data, enablePagination = false  }) {
-  const table = useReactTable({
-    columns,
-    data,
-    getCoreRowModel: getCoreRowModel(),
-    getPaginationRowModel: enablePagination ? getPaginationRowModel() : undefined, // <-- Se habilita solo si se pasa como true
-  });
+    const table = useReactTable({
+        columns,
+        data,
+        getCoreRowModel: getCoreRowModel(),
+        getSortedRowModel: getSortedRowModel(),  // ✅ Activa la ordenación
+        getPaginationRowModel: enablePagination ? getPaginationRowModel() : undefined,
+    });
+    
 
   return (
     <div className="rounded-md border">

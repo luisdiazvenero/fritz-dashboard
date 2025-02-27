@@ -1,23 +1,16 @@
 import React, { useState } from "react";
-import { Img } from "react-image";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import {
-    Table,
-    TableBody,
-    TableCaption,
-    TableCell,
-    TableHead,
-    TableHeader,
-    TableRow,
-} from "@/components/ui/table";
+
 import { Skeleton } from "@/components/ui/skeleton";
-import { Filter, Settings, Database } from 'lucide-react';
-import EmojiBox from "@/components/ui/EmojiBox";
+import { Filter, Settings, Settings2, Database } from 'lucide-react';
 
 import { columns } from "./MapaProductos/columnsCatProd"; // Ruta actualizada
 import { data } from "./MapaProductos/dataCatProd"; // Ruta actualizada
 import { columnsClasificacion } from "./MapaProductos/columnsClasificacion";
 import { dataClasificacion } from "./MapaProductos/dataClasificacion";
+
+import { DataTableToolbar } from "@/components/ui/DataTableToolbar";
+import { PopoverTest } from "@/components/ui/PopoverTest";
+
 
 import { DataTable } from "@/components/ui/DataTable"; // Tabla reutilizable
 
@@ -32,7 +25,7 @@ import {
     DropdownMenuSeparator,
     DropdownMenuCheckboxItem,
     DropdownMenuItem
-  } from "@/components/ui/dropdown-menu";
+} from "@/components/ui/dropdown-menu";
 
 const countryFlags = {
     "venezuela": "🇻🇪",
@@ -66,60 +59,87 @@ const MapaProductos = () => {
     );
 
     const [searchClasificacion, setSearchClasificacion] = useState("");
-const [visibleColumnsClasificacion, setVisibleColumnsClasificacion] = useState(columnsClasificacion.map(col => col.accessorKey));
-const [selectedClassifications, setSelectedClassifications] = useState([]);
-const [selectedTypes, setSelectedTypes] = useState([]);
+    const [selectedCategories, setSelectedCategories] = useState([]);
+const [selectedLineasOperacion, setSelectedLineasOperacion] = useState([]);
+const [selectedClasificacionCliente, setSelectedClasificacionCliente] = useState([]);
+
+
+    const [visibleColumnsClasificacion, setVisibleColumnsClasificacion] = useState(columnsClasificacion.map(col => col.accessorKey));
+
+    const [selectedTypes, setSelectedTypes] = useState([]);
+
+   
+
+
+    // Función para eliminar tildes (acentos) de una cadena
+    const removeAccents = (str) => str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+
+    // Convertimos el término de búsqueda en minúsculas y sin tildes
+    const searchTermNormalized = removeAccents(searchTerm.toLowerCase());
 
     // Filtrar datos por Categorías, Sub Categorías o Marcas
     const filteredData = data.filter((row) =>
-        row.categoria.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        row.subcategorias.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        row.marcas.some(marca => marca.nombre.toLowerCase().includes(searchTerm.toLowerCase()))
+        removeAccents(row.categoria.toLowerCase()).includes(searchTermNormalized) ||
+        removeAccents(row.subcategorias.toLowerCase()).includes(searchTermNormalized) ||
+        row.marcas.some(marca => removeAccents(marca.nombre.toLowerCase()).includes(searchTermNormalized))
     );
 
     const filteredDataClasificacion = dataClasificacion.filter((item) => {
-       // Filtro de búsqueda (coincidencia en cualquier campo relevante)
-    const matchesSearch =
-    item.tipo.toLowerCase().includes(searchClasificacion.toLowerCase()) ||
-    item.clasificacion.toLowerCase().includes(searchClasificacion.toLowerCase()) ||
-    item.producto.toLowerCase().includes(searchClasificacion.toLowerCase()) ||
-    item.disponible.some(
-        (pais) =>
-            pais.includes(searchClasificacion) ||
-            Object.keys(countryFlags).some(
-                (key) => key.includes(searchClasificacion.toLowerCase()) && countryFlags[key] === pais
-            )
-    ); // Busca por emoji o por nombre del país
+        const searchClasificacionNormalized = removeAccents(searchClasificacion.toLowerCase());
 
-// Filtro por Clasificación
-const matchesClassification =
-    selectedClassifications.length === 0 || selectedClassifications.includes(item.clasificacion);
+        const matchesSearch =
+            removeAccents(item.tipo?.toLowerCase() || "").includes(searchClasificacionNormalized) ||
+            removeAccents(item.lineaoperacion?.toLowerCase() || "").includes(searchClasificacionNormalized) ||
+            removeAccents(item.producto?.toLowerCase() || "").includes(searchClasificacionNormalized) ||
+            removeAccents(item.categoria?.toLowerCase() || "").includes(searchClasificacionNormalized) ||
+            removeAccents(item.subcategoria?.toLowerCase() || "").includes(searchClasificacionNormalized) ||
+            removeAccents(item.clasificacionCliente?.toLowerCase() || "").includes(searchClasificacionNormalized) ||
+            removeAccents(item.marca?.toLowerCase() || "").includes(searchClasificacionNormalized) ||
+            (item.disponible?.some(
+                (pais) =>
+                    removeAccents(pais).includes(searchClasificacionNormalized) ||
+                    Object.keys(countryFlags).some(
+                        (key) => removeAccents(key).includes(searchClasificacionNormalized) && countryFlags[key] === pais
+                    )
+            ) || false);
 
-// Filtro por Tipo
-const matchesType = selectedTypes.length === 0 || selectedTypes.includes(item.tipo);
+        // Filtro por Categoría
+        const matchesCategory = selectedCategories.length === 0 || selectedCategories.includes(item.categoria);
 
-return matchesSearch && matchesClassification && matchesType;
+        // Filtro por Línea de Operación
+        const matchesClassification =
+            selectedLineasOperacion.length === 0 || selectedLineasOperacion.includes(item.lineaoperacion);
+
+        // Filtro por Tipo
+        const matchesType = selectedTypes.length === 0 || selectedTypes.includes(item.tipo);
+
+        // Filtro por Clasificación Cliente
+        const matchesClasificacionCliente =
+            selectedClasificacionCliente.length === 0 || selectedClasificacionCliente.includes(item.clasificacioncliente);
+
+        return matchesSearch && matchesCategory && matchesClassification && matchesType && matchesClasificacionCliente;
     });
-    
 
-      
-      // Definir las clasificaciones de productos
-const classifications = {
-    "Operaciones": [
-      "Línea de Emulsiones",
-      "Línea de Cocción",
-      "Línea de Salsas Líquidas",
-      "Línea de Licuados",
-      "Línea de Papas y Queso",
-      "Línea de Bases Saborizadas",
-      "Línea de Mermes",
-    ],
-    "Clientes/Venta": [
-      "Consumo Masivo",
-      "Food Service",
-    ],
-  };
-  
+
+
+
+    // Definir las clasificaciones de productos
+    const classifications = {
+        "Operaciones": [
+            "Línea de Emulsiones",
+            "Línea de Cocción",
+            "Línea de Salsas Líquidas",
+            "Línea de Licuados",
+            "Línea de Papas y Queso",
+            "Línea de Bases Saborizadas",
+            "Línea de Mermes",
+        ],
+        "Clientes/Venta": [
+            "Consumo Masivo",
+            "Food Service",
+        ],
+    };
+
 
     return (
         <div className="space-y-12">
@@ -136,7 +156,7 @@ const classifications = {
                     <div className="flex items-center justify-between mt-4 mb-4">
                         {/* Filtro a la izquierda */}
                         <Input
-                            placeholder="Filtrar: Categorías, Sub Categorías, Marcas.."
+                            placeholder="Buscar.."
                             value={searchTerm}
                             onChange={(e) => setSearchTerm(e.target.value)}
                             className="md:text-xs text-xs w-72 h-10"
@@ -146,7 +166,7 @@ const classifications = {
                         <DropdownMenu>
                             <DropdownMenuTrigger asChild>
                                 <Button variant="outline" className="text-xs flex gap-2">
-                                    <Settings className="w-4 h-4" /> Ocultar
+                                   Columnas <Settings2 className="w-4 h-4" />
                                 </Button>
                             </DropdownMenuTrigger>
                             <DropdownMenuContent align="end">
@@ -174,7 +194,7 @@ const classifications = {
                     </div>
 
                     {/* Tabla con columnas visibles */}
-                    <DataTable columns={columns.filter(col => visibleColumns.includes(col.accessorKey))} data={filteredData} enablePagination={false}  />
+                    <DataTable columns={columns.filter(col => visibleColumns.includes(col.accessorKey))} data={filteredData} enablePagination={false} />
                 </div>
             </section>
 
@@ -187,121 +207,28 @@ const classifications = {
                 />
 
                 <div className="grid grid-cols-1 md:grid-cols-1 gap-4">
-                    {/* Contenedor flex para alinear los elementos */}
-                    <div className="flex items-center justify-between mt-4 mb-4">
-                    <div className="flex items-center gap-2">
-                        {/* Filtro a la izquierda */}
-                        <Input
-                            placeholder="Filtrar: Tipo, Clasificación, Producto, País"
-                            value={searchClasificacion}
-                            onChange={(e) => setSearchClasificacion(e.target.value)}
-                            className="md:text-xs text-xs w-72 h-10"
-                        />
-                        {/* Botón de filtro para Clasificación */}
-<DropdownMenu>
-  <DropdownMenuTrigger asChild>
-    <Button variant="outline" className="text-xs flex gap-2">
-      <Filter className="w-4 h-4" /> Clasificación
-    </Button>
-  </DropdownMenuTrigger>
-  <DropdownMenuContent align="start" className="w-48">
-    <DropdownMenuLabel>Clasificación</DropdownMenuLabel>
-    <DropdownMenuSeparator />
-    {Object.values(classifications).flat().map((clasificacion, index) => (
-      <DropdownMenuCheckboxItem
-        key={index}
-        checked={selectedClassifications.includes(clasificacion)}
-        onCheckedChange={(checked) => {
-          setSelectedClassifications((prev) =>
-            checked
-              ? [...prev, clasificacion]
-              : prev.filter((item) => item !== clasificacion)
-          );
-        }}
-      >
-        {clasificacion}
-      </DropdownMenuCheckboxItem>
-    ))}
-    <DropdownMenuSeparator />
-    <DropdownMenuItem
-      className="text-center text-red-500 cursor-pointer"
-      onClick={() => setSelectedClassifications([])}
-    >
-      Limpiar filtros
-    </DropdownMenuItem>
-  </DropdownMenuContent>
-</DropdownMenu>
+                    
+                    
+                        {/* Filtros */}
+                        <DataTableToolbar
+                                searchValue={searchClasificacion}
+                                onSearchChange={setSearchClasificacion}
+                                selectedCategories={selectedCategories}
+                                setSelectedCategories={setSelectedCategories}
+                                selectedLineasOperacion={selectedLineasOperacion}
+                                setSelectedLineasOperacion={setSelectedLineasOperacion}
+                                selectedClasificacionCliente={selectedClasificacionCliente}
+                                setSelectedClasificacionCliente={setSelectedClasificacionCliente}
+                                visibleColumns={visibleColumnsClasificacion}
+                                setVisibleColumns={setVisibleColumnsClasificacion}
+                                columns={columnsClasificacion}k
+                            />
 
-
-                       {/* Botón de filtro para Tipo */}
-                       <DropdownMenu>
-  <DropdownMenuTrigger asChild>
-    <Button variant="outline" className="text-xs flex gap-2">
-      <Filter className="w-4 h-4" /> Tipo
-    </Button>
-  </DropdownMenuTrigger>
-  <DropdownMenuContent align="start" className="w-48">
-    <DropdownMenuLabel>Tipo</DropdownMenuLabel>
-    <DropdownMenuSeparator />
-
-    {Object.keys(classifications).map((tipo, index) => (
-      <DropdownMenuCheckboxItem
-        key={index}
-        checked={selectedTypes.includes(tipo)}
-        onCheckedChange={(checked) => {
-          setSelectedTypes((prev) =>
-            checked ? [...prev, tipo] : prev.filter((item) => item !== tipo)
-          );
-        }}
-      >
-        {tipo}
-      </DropdownMenuCheckboxItem>
-    ))}
-
-    <DropdownMenuSeparator />
-    <DropdownMenuItem
-      className="text-red-500 cursor-pointer"
-      onSelect={() => setSelectedTypes([])} // Limpia la selección
-    >
-      Limpiar filtros
-    </DropdownMenuItem>
-  </DropdownMenuContent>
-</DropdownMenu>
-
-
-                        </div>
-
-                        {/* Menú de selección de columnas */}
-                        <DropdownMenu>
-                            <DropdownMenuTrigger asChild>
-                                <Button variant="outline" className="text-xs flex gap-2">
-                                    <Settings className="w-4 h-4" /> Ocultar
-                                </Button>
-                            </DropdownMenuTrigger>
-                            <DropdownMenuContent align="end">
-                                <DropdownMenuLabel>Mostrar</DropdownMenuLabel>
-                                <DropdownMenuSeparator />
-                                {columnsClasificacion.map((col) => (
-                                    <DropdownMenuCheckboxItem
-                                        key={col.accessorKey}
-                                        checked={visibleColumnsClasificacion.includes(col.accessorKey)}
-                                        onCheckedChange={(checked) => {
-                                            setVisibleColumnsClasificacion((prev) =>
-                                                checked
-                                                    ? [...prev, col.accessorKey]
-                                                    : prev.filter((key) => key !== col.accessorKey)
-                                            );
-                                        }}
-                                    >
-                                        {col.header}
-                                    </DropdownMenuCheckboxItem>
-                                ))}
-                            </DropdownMenuContent>
-                        </DropdownMenu>
-                    </div>
+                        
+                   
 
                     {/* Tabla con columnas visibles */}
-                    <DataTable columns={columnsClasificacion.filter(col => visibleColumnsClasificacion.includes(col.accessorKey))} data={filteredDataClasificacion} enablePagination={true}/>
+                    <DataTable columns={columnsClasificacion.filter(col => visibleColumnsClasificacion.includes(col.accessorKey))} data={filteredDataClasificacion} enablePagination={true} />
                 </div>
             </section>
         </div>
