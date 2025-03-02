@@ -189,23 +189,24 @@ const AdsMetrics = ({ dateRange, previousDateRange }) => {
            <CardTitle>Tendencia de Inversión</CardTitle>
          </CardHeader>
          <CardContent>
-           <ResponsiveContainer width="100%" height={300}>
-             <LineChart data={transformDataForChart(data?.data, "Gastos por Plataforma", ["Gasto en Google Ads", "Gasto en META Ads"])}>
-               <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
-               <XAxis
-                 dataKey="date"
-                 tickFormatter={formatDateForChart} // Formatear las fechas
-               />
-               <YAxis />
-               <Tooltip
-                 formatter={(value, name, props) => [value, name]}
-                 labelFormatter={(label) => formatDateForChart(label)} // Formatear las etiquetas
-               />
-               <Legend />
-               <Line type="monotone" dataKey="Gasto en Google Ads" name="Gasto en Google Ads" stroke="#1a73e8" strokeWidth={2} />
-               <Line type="monotone" dataKey="Gasto en META Ads" name="Gasto en META Ads" stroke="#34a853" strokeWidth={2} />
-             </LineChart>
-           </ResponsiveContainer>
+         <ResponsiveContainer width="100%" height={300}>
+  <LineChart data={transformDataForChart(data?.data, "Gastos por Plataforma", ["Gasto en Google Ads", "Gasto en META Ads"])}>
+    <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
+    <XAxis
+      dataKey="date"
+      tickFormatter={formatDateForChart} // 📌 Formatear fechas a "Ene 24"
+    />
+    <YAxis />
+    <Tooltip
+      formatter={(value, name) => [value, name]}
+      labelFormatter={(label) => formatDateForChart(label)} // 📌 Formatear etiquetas del tooltip
+    />
+    <Legend />
+    <Line type="monotone" dataKey="Gasto en Google Ads" name="Gasto en Google Ads" stroke="#1a73e8" strokeWidth={2} />
+    <Line type="monotone" dataKey="Gasto en META Ads" name="Gasto en META Ads" stroke="#34a853" strokeWidth={2} />
+  </LineChart>
+</ResponsiveContainer>
+
          </CardContent>
        </Card>
      </div>
@@ -220,6 +221,9 @@ const AdsMetrics = ({ dateRange, previousDateRange }) => {
             previousValue={calculateMetricValue(data?.data, "Inversión en Medios", "Métricas de Performance", "CTR", previousDateRange)}
             icon="🎯"
             suffix="%"
+            trendData={transformDataForChart(data?.data, "Métricas de Performance", ["CTR"])
+                            .map(item => ({ date: item.date, value: item["CTR"] })) // 🔹 Convertir clave a "value"
+                            .slice(-6)}
           />
           <MetricCard 
             title="CPC"
@@ -227,6 +231,9 @@ const AdsMetrics = ({ dateRange, previousDateRange }) => {
             previousValue={calculateMetricValue(data?.data, "Inversión en Medios", "Métricas de Performance", "CPC", previousDateRange)}
             icon="💵"
             prefix="$"
+            trendData={transformDataForChart(data?.data, "Métricas de Performance", ["CPC"])
+              .map(item => ({ date: item.date, value: item["CPC"] })) // 🔹 Convertir clave a "value"
+              .slice(-6)}
           />
        </div>
 
@@ -265,18 +272,27 @@ const AdsMetrics = ({ dateRange, previousDateRange }) => {
             value={calculateMetricValue(data?.data, "Inversión en Medios", "Métricas META", "Alcance en META", dateRange)}
             previousValue={calculateMetricValue(data?.data, "Inversión en Medios", "Métricas META", "Alcance en META", previousDateRange)}
             icon="📢"
+            trendData={transformDataForChart(data?.data, "Métricas META", ["Alcance en META"])
+              .map(item => ({ date: item.date, value: item["Alcance en META"] })) // 🔹 Convertir clave a "value"
+              .slice(-6)}
           />
           <MetricCard 
             title="Seguimiento Facebook"
             value={calculateMetricValue(data?.data, "Inversión en Medios", "Métricas META", "Seguimiento en Facebook", dateRange)}
             previousValue={calculateMetricValue(data?.data, "Inversión en Medios", "Métricas META", "Seguimiento en Facebook", previousDateRange)}
             icon="👍"
+            trendData={transformDataForChart(data?.data, "Métricas META", ["Seguimiento en Facebook"])
+              .map(item => ({ date: item.date, value: item["Seguimiento en Facebook"] })) // 🔹 Convertir clave a "value"
+              .slice(-6)}
           />
           <MetricCard 
             title="Seguidores Instagram"
             value={calculateMetricValue(data?.data, "Inversión en Medios", "Métricas META", "Seguidores en Instagram", dateRange)}
             previousValue={calculateMetricValue(data?.data, "Inversión en Medios", "Métricas META", "Seguidores en Instagram", previousDateRange)}
             icon="📸"
+            trendData={transformDataForChart(data?.data, "Métricas META", ["Seguidores en Instagram"])
+              .map(item => ({ date: item.date, value: item["Seguidores en Instagram"] })) // 🔹 Convertir clave a "value"
+              .slice(-6)}
           />
        </div>
      </div>

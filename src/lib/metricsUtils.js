@@ -17,23 +17,33 @@ export const calculateMetricValue = (data, type, category, metric, dateRange) =>
       .reduce((sum, item) => sum + item.value, 0);
 };
 
+
   
-  export const transformDataForChart = (data, category, metrics) => {
-    if (!data || !Array.isArray(data)) return [];
-  
-    const groupedByDate = data
-      .filter((item) => item.category === category && metrics.includes(item.metric))
-      .reduce((acc, item) => {
-        const date = item.date.split("T")[0];
-        if (!acc[date]) {
-          acc[date] = { date };
-        }
-        acc[date][item.metric] = (acc[date][item.metric] || 0) + item.value;
-        return acc;
-      }, {});
-  
-    return Object.values(groupedByDate).sort((a, b) => new Date(a.date) - new Date(b.date));
-  };
+export const transformDataForChart = (data, category, metrics) => {
+  if (!data || !Array.isArray(data)) return [];
+
+  // 🔹 Agrupar datos por mes
+  const groupedByMonth = data
+    .filter((item) => item.category === category && metrics.includes(item.metric))
+    .reduce((acc, item) => {
+      const date = new Date(item.date);
+      const monthKey = `${date.getFullYear()}-${date.getMonth() + 1}`; // 🔹 Formato YYYY-MM
+
+      if (!acc[monthKey]) {
+        acc[monthKey] = { date: new Date(date.getFullYear(), date.getMonth(), 1).toISOString() }; // 📌 Usar primer día del mes
+        metrics.forEach(metric => acc[monthKey][metric] = 0); // Inicializar métricas en 0
+      }
+
+      acc[monthKey][item.metric] += item.value; // 🔄 Sumar valores dentro del mes
+
+      return acc;
+    }, {});
+
+  // 🔄 Convertir de objeto a array y ordenar por fecha
+  return Object.values(groupedByMonth).sort((a, b) => new Date(a.date) - new Date(b.date));
+};
+
+
   
   export const formatDateForChart = (dateString) => {
     const date = new Date(dateString);

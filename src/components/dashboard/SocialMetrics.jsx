@@ -182,25 +182,41 @@ const SocialMetrics = ({ dateRange, previousDateRange }) => {
             value={calculateMetricValue(data?.data, "Redes Sociales", "YouTube", "Visualizaciones", dateRange)}
             previousValue={calculateMetricValue(data?.data, "Redes Sociales", "YouTube", "Visualizaciones", previousDateRange)}
             icon={<Youtube className="h-6 w-6 text-red-500" />}
+            trendData={transformDataForChart(data?.data, "YouTube", ["Visualizaciones"])
+              .map(item => ({ date: item.date, value: item["Visualizaciones"] })) // 🔹 Cambiar clave a "value"
+              .slice(-6)}
+              barColorClass="bg-red-500"
           />
           <MetricCard
-            title="Instagram: Alcance"
-            value={calculateMetricValue(data?.data, "Redes Sociales", "Instagram", "Alcance", dateRange)}
-            previousValue={calculateMetricValue(data?.data, "Redes Sociales", "Instagram", "Alcance", previousDateRange)}
-            icon={<Instagram className="h-6 w-6 text-purple-500" />}
-          />
-          <MetricCard
-            title="TikTok: Visualizaciones"
-            value={calculateMetricValue(data?.data, "Redes Sociales", "TikTok", "Visualizaciones de Videos", dateRange)}
-            previousValue={calculateMetricValue(data?.data, "Redes Sociales", "TikTok", "Visualizaciones de Videos", previousDateRange)}
-            icon={<Music2 className="h-6 w-6 text-black-500" />}
-          />
-          <MetricCard
-            title="Facebook: Seguidores"
-            value={calculateMetricValue(data?.data, "Redes Sociales", "Facebook", "Seguidores", dateRange)}
-            previousValue={calculateMetricValue(data?.data, "Redes Sociales", "Facebook", "Seguidores", previousDateRange)}
-            icon={<Facebook className="h-6 w-6 text-blue-500" />}
-          />
+  title="Instagram: Alcance"
+  value={calculateMetricValue(data?.data, "Redes Sociales", "Instagram", "Alcance", dateRange)}
+  previousValue={calculateMetricValue(data?.data, "Redes Sociales", "Instagram", "Alcance", previousDateRange)}
+  icon={<Instagram className="h-6 w-6 text-purple-500" />}
+  trendData={transformDataForChart(data?.data, "Instagram", ["Alcance"])
+    .map(item => ({ date: item.date, value: item["Alcance"] })) // 🔹 Convertir clave a "value"
+    .slice(-6)}
+    barColorClass="bg-purple-700"
+/>
+
+<MetricCard
+  title="TikTok: Visualizaciones"
+  value={calculateMetricValue(data?.data, "Redes Sociales", "TikTok", "Visualizaciones de Videos", dateRange)}
+  previousValue={calculateMetricValue(data?.data, "Redes Sociales", "TikTok", "Visualizaciones de Videos", previousDateRange)}
+  icon={<Music2 className="h-6 w-6 text-black-500" />}
+  trendData={transformDataForChart(data?.data, "TikTok", ["Visualizaciones de Videos"])
+    .map(item => ({ date: item.date, value: item["Visualizaciones de Videos"] })) // 🔹 Convertir clave a "value"
+    .slice(-6)}
+/>
+<MetricCard
+  title="Facebook: Seguidores"
+  value={calculateMetricValue(data?.data, "Redes Sociales", "Facebook", "Seguidores", dateRange)}
+  previousValue={calculateMetricValue(data?.data, "Redes Sociales", "Facebook", "Seguidores", previousDateRange)}
+  icon={<Facebook className="h-6 w-6 text-blue-500" />}
+  trendData={transformDataForChart(data?.data, "Facebook", ["Seguidores"])
+    .map(item => ({ date: item.date, value: item["Seguidores"] })) // 🔹 Convertir clave a "value"
+    .slice(-6)}
+    barColorClass="bg-blue-700"
+/>
         </div>
       </section>
 
@@ -216,26 +232,39 @@ const SocialMetrics = ({ dateRange, previousDateRange }) => {
         />
         <div className="space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <MetricCard
-              title="Nuevos Videos"
-              value={calculateMetricValue(data?.data, "Redes Sociales", "YouTube", "Nuevos Videos", dateRange)}
-              previousValue={calculateMetricValue(data?.data, "Redes Sociales", "YouTube", "Nuevos Videos", previousDateRange)}
-              icon="🎥"
-            />
-            <MetricCard
-              title="Nuevos Suscriptores"
-              value={calculateMetricValue(data?.data, "Redes Sociales", "YouTube", "Nuevos Suscriptores", dateRange)}
-              previousValue={calculateMetricValue(data?.data, "Redes Sociales", "YouTube", "Nuevos Suscriptores", previousDateRange)}
-              icon="👥"
-            />
-            <MetricCard
-              title="Visualizaciones"
-              value={calculateMetricValue(data?.data, "Redes Sociales", "YouTube", "Visualizaciones", dateRange)}
-              previousValue={calculateMetricValue(data?.data, "Redes Sociales", "YouTube", "Visualizaciones", previousDateRange)}
-              icon="👁️"
-            />
+          <MetricCard
+  title="Nuevos Videos"
+  value={calculateMetricValue(data?.data, "Redes Sociales", "YouTube", "Nuevos Videos", dateRange)}
+  previousValue={calculateMetricValue(data?.data, "Redes Sociales", "YouTube", "Nuevos Videos", previousDateRange)}
+  icon="🎥"
+  trendData={transformDataForChart(data?.data, "YouTube", ["Nuevos Videos"])
+    .map(item => ({ date: item.date, value: item["Nuevos Videos"] }))
+    .slice(-6)} 
+    
+/>
+<MetricCard
+  title="Nuevos Suscriptores"
+  value={calculateMetricValue(data?.data, "Redes Sociales", "YouTube", "Nuevos Suscriptores", dateRange)}
+  previousValue={calculateMetricValue(data?.data, "Redes Sociales", "YouTube", "Nuevos Suscriptores", previousDateRange)}
+  icon="👥"
+  trendData={transformDataForChart(data?.data, "YouTube", ["Nuevos Suscriptores"])
+    .map(item => ({ date: item.date, value: item["Nuevos Suscriptores"] }))
+    .slice(-6)}
+    
+/>
+<MetricCard
+  title="Visualizaciones"
+  value={calculateMetricValue(data?.data, "Redes Sociales", "YouTube", "Visualizaciones", dateRange)}
+  previousValue={calculateMetricValue(data?.data, "Redes Sociales", "YouTube", "Visualizaciones", previousDateRange)}
+  icon="👁️"
+  trendData={transformDataForChart(data?.data, "YouTube", ["Visualizaciones"])
+    .map(item => ({ date: item.date, value: item["Visualizaciones"] }))
+    .slice(-6)}
+    
+/>
           </div>
 
+{/* Antiguo Chart
           <Card className="border-none shadow-sm">
             <CardHeader>
               <CardTitle>Tendencia de Visualizaciones</CardTitle>
@@ -261,6 +290,9 @@ const SocialMetrics = ({ dateRange, previousDateRange }) => {
               </ResponsiveContainer>
             </CardContent>
           </Card>
+          */}
+
+
         </div>
       </section>
 
@@ -281,33 +313,54 @@ const SocialMetrics = ({ dateRange, previousDateRange }) => {
               value={calculateMetricValue(data?.data, "Redes Sociales", "Instagram", "Seguidores", dateRange)}
               previousValue={calculateMetricValue(data?.data, "Redes Sociales", "Instagram", "Seguidores", previousDateRange)}
               icon="👥"
+              trendData={transformDataForChart(data?.data, "Instagram", ["Seguidores"])
+                .map(item => ({ date: item.date, value: item["Seguidores"] })) // 🔹 Convertir clave a "value"
+                .slice(-6)}
+                //barColorClass="bg-purple-700"
             />
             <MetricCard
               title="Nuevos Followers"
               value={calculateMetricValue(data?.data, "Redes Sociales", "Instagram", "Nuevos Seguidores", dateRange)}
               previousValue={calculateMetricValue(data?.data, "Redes Sociales", "Instagram", "Nuevos Seguidores", previousDateRange)}
               icon="✨"
+              trendData={transformDataForChart(data?.data, "Instagram", ["Nuevos Seguidores"])
+                .map(item => ({ date: item.date, value: item["Nuevos Seguidores"] })) // 🔹 Convertir clave a "value"
+                .slice(-6)}
+                //barColorClass="bg-purple-700"
             />
             <MetricCard
               title="Impresiones"
               value={calculateMetricValue(data?.data, "Redes Sociales", "Instagram", "Impresiones", dateRange)}
               previousValue={calculateMetricValue(data?.data, "Redes Sociales", "Instagram", "Impresiones", previousDateRange)}
               icon="👁️"
+              trendData={transformDataForChart(data?.data, "Instagram", ["Impresiones"])
+                .map(item => ({ date: item.date, value: item["Impresiones"] })) // 🔹 Convertir clave a "value"
+                .slice(-6)}
+                //barColorClass="bg-purple-700"
             />
             <MetricCard
               title="Alcance"
               value={calculateMetricValue(data?.data, "Redes Sociales", "Instagram", "Alcance", dateRange)}
               previousValue={calculateMetricValue(data?.data, "Redes Sociales", "Instagram", "Alcance", previousDateRange)}
               icon="📢"
+              trendData={transformDataForChart(data?.data, "Instagram", ["Alcance"])
+                .map(item => ({ date: item.date, value: item["Alcance"] })) // 🔹 Convertir clave a "value"
+                .slice(-6)}
+                //barColorClass="bg-purple-700"
             />
             <MetricCard
               title="Interacciones"
               value={calculateMetricValue(data?.data, "Redes Sociales", "Instagram", "Interacciones", dateRange)}
               previousValue={calculateMetricValue(data?.data, "Redes Sociales", "Instagram", "Interacciones", previousDateRange)}
               icon="❤️"
+              trendData={transformDataForChart(data?.data, "Instagram", ["Interacciones"])
+                .map(item => ({ date: item.date, value: item["Interacciones"] })) // 🔹 Convertir clave a "value"
+                .slice(-6)}
+                //barColorClass="bg-purple-700"
             />
           </div>
 
+{/* Grafico
           <Card className="border-none shadow-sm">
             <CardHeader>
               <CardTitle>Métricas de Engagement</CardTitle>
@@ -334,6 +387,8 @@ const SocialMetrics = ({ dateRange, previousDateRange }) => {
               </ResponsiveContainer>
             </CardContent>
           </Card>
+          */}
+
         </div>
       </section>
 
@@ -354,39 +409,58 @@ const SocialMetrics = ({ dateRange, previousDateRange }) => {
               value={calculateMetricValue(data?.data, "Redes Sociales", "TikTok", "Nuevos Seguidores", dateRange)}
               previousValue={calculateMetricValue(data?.data, "Redes Sociales", "TikTok", "Nuevos Seguidores", previousDateRange)}
               icon="✨"
+              trendData={transformDataForChart(data?.data, "TikTok", ["Nuevos Seguidores"])
+                .map(item => ({ date: item.date, value: item["Nuevos Seguidores"] })) // 🔹 Convertir clave a "value"
+                .slice(-6)}
             />
             <MetricCard
               title="Seguidores Netos"
               value={calculateMetricValue(data?.data, "Redes Sociales", "TikTok", "Seguidores Netos", dateRange)}
               previousValue={calculateMetricValue(data?.data, "Redes Sociales", "TikTok", "Seguidores Netos", previousDateRange)}
               icon="👥"
+              trendData={transformDataForChart(data?.data, "TikTok", ["Seguidores Netos"])
+                .map(item => ({ date: item.date, value: item["Seguidores Netos"] })) // 🔹 Convertir clave a "value"
+                .slice(-6)}
             />
             <MetricCard
               title="Visualizaciones Videos"
               value={calculateMetricValue(data?.data, "Redes Sociales", "TikTok", "Visualizaciones de Videos", dateRange)}
               previousValue={calculateMetricValue(data?.data, "Redes Sociales", "TikTok", "Visualizaciones de Videos", previousDateRange)}
               icon="👁️"
+              trendData={transformDataForChart(data?.data, "TikTok", ["Visualizaciones de Videos"])
+                .map(item => ({ date: item.date, value: item["Visualizaciones de Videos"] })) // 🔹 Convertir clave a "value"
+                .slice(-6)}
             />
             <MetricCard
               title="Visualizaciones Perfil"
               value={calculateMetricValue(data?.data, "Redes Sociales", "TikTok", "Visualizaciones de Perfil", dateRange)}
               previousValue={calculateMetricValue(data?.data, "Redes Sociales", "TikTok", "Visualizaciones de Perfil", previousDateRange)}
               icon="👤"
+              trendData={transformDataForChart(data?.data, "TikTok", ["Visualizaciones de Perfil"])
+                .map(item => ({ date: item.date, value: item["Visualizaciones de Perfil"] })) // 🔹 Convertir clave a "value"
+                .slice(-6)}
             />
             <MetricCard
               title="Me gusta"
               value={calculateMetricValue(data?.data, "Redes Sociales", "TikTok", "Me gusta", dateRange)}
-              previousValue={calculateMetricValue(data?.data, "Redes Sociales", "TikTok", "Me gustas", previousDateRange)}
+              previousValue={calculateMetricValue(data?.data, "Redes Sociales", "TikTok", "Me gusta", previousDateRange)}
               icon="❤️"
+              trendData={transformDataForChart(data?.data, "TikTok", ["Me gusta"])
+                .map(item => ({ date: item.date, value: item["Me gusta"] })) // 🔹 Convertir clave a "value"
+                .slice(-6)}
             />
             <MetricCard
               title="Compartidos"
               value={calculateMetricValue(data?.data, "Redes Sociales", "TikTok", "Compartidos", dateRange)}
               previousValue={calculateMetricValue(data?.data, "Redes Sociales", "TikTok", "Compartido", previousDateRange)}
               icon="🔄"
+              trendData={transformDataForChart(data?.data, "TikTok", ["Compartidos"])
+                .map(item => ({ date: item.date, value: item["Compartidos"] })) // 🔹 Convertir clave a "value"
+                .slice(-6)}
             />
           </div>
 
+{/* Grafico
           <Card className="border-none shadow-sm">
             <CardHeader>
               <CardTitle>Rendimiento de Contenido</CardTitle>
@@ -413,6 +487,9 @@ const SocialMetrics = ({ dateRange, previousDateRange }) => {
               </ResponsiveContainer>
             </CardContent>
           </Card>
+          */}
+
+
         </div>
       </section>
 
@@ -433,15 +510,24 @@ const SocialMetrics = ({ dateRange, previousDateRange }) => {
               value={calculateMetricValue(data?.data, "Redes Sociales", "Facebook", "Seguidores", dateRange)}
               previousValue={calculateMetricValue(data?.data, "Redes Sociales", "Facebook", "Seguidores", previousDateRange)}
               icon="👥"
+              trendData={transformDataForChart(data?.data, "Facebook", ["Seguidores"])
+                .map(item => ({ date: item.date, value: item["Seguidores"] })) // 🔹 Convertir clave a "value"
+                .slice(-6)}
+                //barColorClass="bg-blue-700"
             />
             <MetricCard
               title="Nuevos Followers"
               value={calculateMetricValue(data?.data, "Redes Sociales", "Facebook", "Nuevos Seguidores", dateRange)}
               previousValue={calculateMetricValue(data?.data, "Redes Sociales", "Facebook", "Nuevos Seguidores", previousDateRange)}
               icon="✨"
+              trendData={transformDataForChart(data?.data, "Facebook", ["Nuevos Seguidores"])
+                .map(item => ({ date: item.date, value: item["Nuevos Seguidores"] })) // 🔹 Convertir clave a "value"
+                .slice(-6)}
+                //barColorClass="bg-blue-700"
             />
           </div>
 
+{/* Grafico
           <Card className="border-none shadow-sm">
             <CardHeader>
               <CardTitle>Crecimiento de Seguidores</CardTitle>
@@ -466,6 +552,7 @@ const SocialMetrics = ({ dateRange, previousDateRange }) => {
               </ResponsiveContainer>
             </CardContent>
           </Card>
+          */}
         </div>
       </section>
 
