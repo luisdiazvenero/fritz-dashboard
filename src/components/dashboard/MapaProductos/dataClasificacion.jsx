@@ -1301,4 +1301,4 @@ export const dataClasificacion = [
 
 ];
 
-console.log(JSON.stringify(dataClasificacion, null, 2));
+//console.log(JSON.stringify(dataClasificacion, null, 2));

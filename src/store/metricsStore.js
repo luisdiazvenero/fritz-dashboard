@@ -122,8 +122,9 @@ fetchWebMetrics: async (dateRange = {}, forceRefresh = false) => {
   
 
   // Métricas Sociales
-  fetchSocialMetrics: async (dateRange = {}, forceRefresh = false) => {
+  fetchSocialMetrics: async (dateRange = {}, account = null, forceRefresh = false) => {
     try {
+      
       set((state) => ({
         social: {
           ...state.social,
@@ -132,34 +133,78 @@ fetchWebMetrics: async (dateRange = {}, forceRefresh = false) => {
         },
       }));
   
-      // Preparar parámetros de consulta para el backend
-      const params = dateRange.start && dateRange.end
-        ? { startDate: dateRange.start, endDate: dateRange.end }
-        : {};
-      const data = await api.social.getAll(params);
-  
-      set((state) => ({
-        social: {
-          ...state.social,
-          data,
-          isLoading: false,
-          lastUpdated: new Date().toISOString(),
-        },
-      }));
-  
-      return data;
+    
+      if (account === null) {
+        // 🔹 Obtener datos de todas las redes sociales (sin filtro de cuenta)
+        const generalResponse = await api.social.getAll({ type: "Redes Sociales", ...dateRange });
+
+      
+        set((state) => ({
+          social: {
+            ...state.social,
+            data: generalResponse.success ? generalResponse.data : [],
+            isLoading: false,
+            lastUpdated: new Date().toISOString(),
+          },
+        }));
+      } else {
+        let allData = []; // ✅ Se declara solo una vez
+
+        // 🔹 Solicitar datos específicos de Instagram (CON account)
+        const response = await api.social.getAll({ type: "Redes Sociales", ...dateRange });
+
+        if (!response.success) {
+          console.error("❌ Error obteniendo métricas sociales:", response);
+          return;
+        }
+
+        allData = response.data; // ✅ Corrección: solo asignación, no redeclaración
+
+        // Filtrar Instagram por cuenta específica
+        if (account) {
+          allData = allData.filter(item => item.category !== "Instagram" || item.account === account);
+        }
+
+        
+
+        // 🔹 Eliminar duplicados verificando la combinación de category, metric y date (sin importar mayúsculas/minúsculas ni espacios adicionales)
+const uniqueDataArray = Array.from(
+  new Map(
+    allData.map(item => [`${item.category.trim().toLowerCase()}-${item.metric.trim().toLowerCase()}-${item.date}`, item])
+  ).values()
+);
+
+
+
+set((state) => ({
+  social: {
+    ...state.social,
+    data: [
+      ...state.social.data.filter(item => !(item.category === "Instagram" && item.account)), 
+      ...uniqueDataArray
+    ], // 🔹 Mantiene los datos previos y solo reemplaza los que tienen `account`
+    isLoading: false,
+    lastUpdated: new Date().toISOString(),
+  },
+}));
+
+
+      }
     } catch (error) {
-      console.error('Error fetching social metrics:', error);
+      console.error("Error fetching social metrics:", error);
       set((state) => ({
         social: {
           ...state.social,
           isLoading: false,
-          error: 'Error al cargar las métricas sociales',
+          error: "Error al cargar las métricas sociales",
         },
       }));
       throw error;
     }
   },
+
+  
+  
   
 
   // Métricas de Media

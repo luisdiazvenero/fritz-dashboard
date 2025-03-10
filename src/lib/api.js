@@ -100,7 +100,7 @@ export const api = {
   web: {
     getAll: async (params = {}) => {
       try {
-        console.log('Fetching web metrics...');
+        //console.log('Fetching web metrics...');
         const queryString = new URLSearchParams(params).toString();
         const response = await fetch(`${API_BASE_URL}/metrics/web?${queryString}`);
         return handleApiResponse(response);
@@ -115,7 +115,7 @@ export const api = {
   social: {
     getAll: async (params = {}) => {
       try {
-        console.log('Fetching social metrics...');
+        
         const queryString = new URLSearchParams(params).toString();
         const response = await fetch(`${API_BASE_URL}/metrics/social?${queryString}`);
         return handleApiResponse(response);
@@ -125,12 +125,13 @@ export const api = {
       }
     }
   },
+  
 
   // Métricas de Media
   media: {
     getAll: async (params = {}) => {
       try {
-        console.log('Fetching media metrics...');
+        //console.log('Fetching media metrics...');
         const queryString = new URLSearchParams(params).toString();
         const response = await fetch(`${API_BASE_URL}/metrics/media?${queryString}`);
         return handleApiResponse(response);

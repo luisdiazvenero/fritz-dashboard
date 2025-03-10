@@ -6,6 +6,7 @@ import { formatDateForChart } from "@/lib/metricsUtils";
 
 
 const MetricCard = ({ title = "", value, previousValue, icon, prefix = '', suffix = '', trendData = [], barColorClass = "bg-primary" }) => {
+  
   const percentageChange = previousValue
     ? ((value - previousValue) / previousValue * 100).toFixed(1)
     : 0;

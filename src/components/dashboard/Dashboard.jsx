@@ -56,8 +56,8 @@ const Dashboard = () => {
     to: new Date(dateRange.from.getFullYear(), dateRange.from.getMonth(), 0)
   };
 
-  console.log("Rango inicial en Dashboard:", dateRange);
-  console.log("Rango previo en Dashboard:", previousDateRange);
+  //console.log("Rango inicial en Dashboard:", dateRange);
+  //console.log("Rango previo en Dashboard:", previousDateRange);
 
   const getActivePageTitle = () => {
     switch (activeTab) {
