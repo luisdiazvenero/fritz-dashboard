@@ -194,7 +194,38 @@ const internationalData = data.filter(d => d.account === "fritzinternational");
 console.log("📌 Datos de Instagram Chile en el store:", chileData.length, chileData);
 console.log("📌 Datos de Instagram Internacional en el store:", internationalData.length, internationalData);
 
+// Crear un objeto para combinar todos los datos
+const combineSocialData = () => {
+  const instagramData = transformDataForChart(data, "Instagram", ["Alcance"]);
+  const youtubeData = transformDataForChart(data, "YouTube", ["Visualizaciones"]);
+  const tiktokData = transformDataForChart(data, "TikTok", ["Visualizaciones de Videos"]);
+  const facebookData = transformDataForChart(data, "Facebook", ["Seguidores"]);
 
+  // Crear un mapa para combinar los datos por fecha
+  const combinedMap = new Map();
+
+  // Función para procesar y combinar datos
+  const processData = (sourceData, key) => {
+    sourceData.forEach(item => {
+      const date = item.date;
+      if (!combinedMap.has(date)) {
+        combinedMap.set(date, { date });
+      }
+      combinedMap.get(date)[key] = item[key];
+    });
+  };
+
+  // Procesar cada conjunto de datos
+  processData(instagramData, "Alcance");
+  processData(youtubeData, "Visualizaciones");
+  processData(tiktokData, "Visualizaciones de Videos");
+  processData(facebookData, "Seguidores");
+
+  // Convertir el mapa a array y ordenar por fecha
+  return Array.from(combinedMap.values()).sort((a, b) => 
+    new Date(a.date) - new Date(b.date)
+  );
+};
 
 
   return (
@@ -263,6 +294,64 @@ console.log("📌 Datos de Instagram Internacional en el store:", internationalD
     barColorClass="bg-blue-700"
 />
         </div>
+
+        
+<Card className="border-none shadow-sm">
+  <CardHeader>
+    <CardTitle className="text-lg text-gray-700">Tendencia de Redes Sociales</CardTitle>
+  </CardHeader>
+  <CardContent>
+    <ResponsiveContainer width="100%" height={400}>
+      <LineChart data={combineSocialData()}>
+        <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
+        <XAxis
+          dataKey="date"
+          tickFormatter={formatDateForChart}
+        />
+        <YAxis />
+        <Tooltip
+          formatter={(value, name, props) => [value, name]}
+          labelFormatter={(label) => formatDateForChart(label)}
+        />
+        <Legend />
+        
+        <Line 
+          type="monotone" 
+          dataKey="Alcance" 
+          name="📸 Instagram: Alcance" 
+          stroke="#833AB4" 
+          strokeWidth={2} 
+          dot={false}
+        />
+        <Line 
+          type="monotone" 
+          dataKey="Visualizaciones" 
+          name="📺 YouTube: Visualizaciones" 
+          stroke="#FF0000" 
+          strokeWidth={2} 
+          dot={false}
+        />
+        <Line 
+          type="monotone" 
+          dataKey="Visualizaciones de Videos" 
+          name="🎵 TikTok: Visualizaciones" 
+          stroke="#000000" 
+          strokeWidth={2} 
+          dot={false}
+        />
+        <Line 
+          type="monotone" 
+          dataKey="Seguidores" 
+          name="👍 Facebook: Seguidores" 
+          stroke="#1877F2" 
+          strokeWidth={2} 
+          dot={false}
+        />
+      </LineChart>
+    </ResponsiveContainer>
+  </CardContent>
+</Card>
+        
       </section>
 
       <Separator className="my-8" />

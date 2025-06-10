@@ -241,7 +241,7 @@ const WebMetrics = ({ dateRange, previousDateRange }) => {
         />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <MetricCard
-            title="Totales Fritz"
+            title="Totales Visitas Fritz"
             value={calculateTotalFritz(data?.data, dateRange)}
             previousValue={0} // Este puede calcularse si tienes datos históricos similares
             icon={<Globe2 className="h-6 w-6 text-blue-500" />}
@@ -257,7 +257,13 @@ const WebMetrics = ({ dateRange, previousDateRange }) => {
             icon={<Users className="h-6 w-6 text-blue-500" />}
           />
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 mt-6">
+          <MetricCard
+                title={<div className="flex items-center gap-2">Contacto</div>}
+                value={calculateMetricValue(data?.data, "Web", "Fritz International", "Contacto Venezuela", dateRange)}
+                previousValue={calculateMetricValue(data?.data, "Web", "Fritz International", "Contacto Venezuela", previousDateRange)}
+                icon="💬"
+              />
           <MetricCard
             title="Nuevos Fritz Lovers"
             value={calculateMetricValue(data?.data, "Web", "Fritz International", "Nuevos Fritz Lover", dateRange)}
@@ -352,6 +358,7 @@ const WebMetrics = ({ dateRange, previousDateRange }) => {
             </CardContent>
           </Card>
 
+          {/*  Paginas de Contacto
           <div>
             <h3 className="text-lg font-semibold text-gray-700 mb-4">Páginas de Contacto</h3>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
@@ -377,6 +384,9 @@ const WebMetrics = ({ dateRange, previousDateRange }) => {
               />
             </div>
           </div>
+          */}
+
+
         </div>
       </section>
 
