@@ -63,10 +63,7 @@ export const transformDataForChart = (data, category, metrics, account = null) =
   
   export const formatDateForChart = (dateString) => {
     const date = new Date(dateString);
-    const months = ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"];
-    const month = months[date.getMonth()];
+    const month = (date.getMonth() + 1).toString().padStart(2, '0'); // Asegura 2 dígitos
     const year = date.getFullYear().toString().slice(-2);
-    return `${month} ${year}`;
-};
-
-  
+    return `${month}/${year}`;
+  };

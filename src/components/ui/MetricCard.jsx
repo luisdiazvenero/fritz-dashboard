@@ -1,11 +1,11 @@
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { ResponsiveContainer, BarChart, Bar, XAxis, Tooltip as ChartTooltip } from "recharts";
+import { ResponsiveContainer, BarChart, LineChart, Bar, Line, XAxis, Tooltip as ChartTooltip } from "recharts";
 import { format } from "date-fns";
 import { formatDateForChart } from "@/lib/metricsUtils";
 
 
-const MetricCard = ({ title = "", value, previousValue, icon, prefix = '', suffix = '', trendData = [], barColorClass = "bg-primary" }) => {
+const MetricCard = ({ title = "", value, previousValue, icon, prefix = '', suffix = '', trendData = [], barColorClass = "bg-primary", chartType = 'bar' }) => {
   
   const percentageChange = previousValue
     ? ((value - previousValue) / previousValue * 100).toFixed(1)
@@ -51,27 +51,46 @@ const MetricCard = ({ title = "", value, previousValue, icon, prefix = '', suffi
         {/* 📊 Renderizar BarChart solo si hay datos */}
         {trendData.length > 0 && (
           <div className="w-full mt-2">
-            <ResponsiveContainer width="100%" height={80}>
-              <BarChart data={trendData} margin={{ top: 0, bottom: -6 }}>
-                {/* 📌 Formatear fecha en el eje X */}
-                <XAxis
-                  dataKey="date"
-                  tickFormatter={formatDateForChart} // 🏷️ Formatea fecha a "Ene 25"
-                  tick={{ fontSize: 10, dy: 8 }} // 🔹 Tamaño XS
-                  axisLine={false} // ❌ Oculta la línea del eje
-                  tickLine={false} // ❌ Oculta las líneas de las marcas
-                />
-
-
-                <Bar dataKey="value" fill={computedBarColor} opacity={0.8} radius={[4, 4, 0, 0]}/>
-
-                {/* 📌 Tooltip corregido para eliminar ":" innecesario */}
-                <ChartTooltip
-                  formatter={(value) => [`${metricName}: ${value.toLocaleString()}`, null]}
-                  labelFormatter={(label) => format(new Date(label), "MMM yy")}
-                />
-
-              </BarChart>
+            <ResponsiveContainer width="100%" height={120}>
+              {chartType === 'line' ? (
+                <LineChart data={trendData} margin={{ top: 5, bottom: -6 }}>
+                  <XAxis
+                    dataKey="date"
+                    tickFormatter={formatDateForChart}
+                    tick={{ fontSize: 10, dy: 8 }}
+                    axisLine={false}
+                    tickLine={false}
+                    //interval={0}
+                  />
+                  <Line 
+                    type="monotone" 
+                    dataKey="value" 
+                    stroke={computedBarColor} 
+                    strokeWidth={2}
+                    dot={false}
+                    strokeLinecap="round"
+                  />
+                  <ChartTooltip
+                    formatter={(value) => [`${metricName}: ${value.toLocaleString()}`, null]}
+                    labelFormatter={(label) => format(new Date(label), "MMM yy")}
+                  />
+                </LineChart>
+              ) : (
+                <BarChart data={trendData} margin={{ top: 0, bottom: -6 }}>
+                  <XAxis
+                    dataKey="date"
+                    tickFormatter={formatDateForChart}
+                    tick={{ fontSize: 10, dy: 8 }}
+                    axisLine={false}
+                    tickLine={false}
+                  />
+                  <Bar dataKey="value" fill={computedBarColor} opacity={0.8} radius={[4, 4, 0, 0]} />
+                  <ChartTooltip
+                    formatter={(value) => [`${metricName}: ${value.toLocaleString()}`, null]}
+                    labelFormatter={(label) => format(new Date(label), "MMM yy")}
+                  />
+                </BarChart>
+              )}
             </ResponsiveContainer>
           </div>
         )}

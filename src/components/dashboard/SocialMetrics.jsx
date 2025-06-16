@@ -246,18 +246,9 @@ const combineSocialData = () => {
           subtitle="Vista general de todas las plataformas"
           color="bg-blue-500"
         />
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
           
-          <MetricCard
-            title="YouTube: Visualizaciones"
-            value={calculateMetricValue(data, "Redes Sociales", "YouTube", "Visualizaciones", dateRange)}
-            previousValue={calculateMetricValue(data, "Redes Sociales", "YouTube", "Visualizaciones", previousDateRange)}
-            icon={<Youtube className="h-6 w-6 text-red-500" />}
-            trendData={transformDataForChart(data, "YouTube", ["Visualizaciones"])
-              .map(item => ({ date: item.date, value: item["Visualizaciones"] })) // 🔹 Cambiar clave a "value"
-              .slice(-6)}
-              barColorClass="bg-red-500"
-          />
+         
           
           <MetricCard
   title="Instagram: Alcance"
@@ -266,8 +257,9 @@ const combineSocialData = () => {
   icon={<Instagram className="h-6 w-6 text-purple-500" />}
   trendData={transformDataForChart(data, "Instagram", ["Alcance"])
     .map(item => ({ date: item.date, value: item["Alcance"] }))
-    .slice(-6)}
+    .slice(-12)}
   barColorClass="bg-purple-700"
+  chartType="line"
 />
 
 
@@ -281,8 +273,22 @@ const combineSocialData = () => {
   icon={<Music2 className="h-6 w-6 text-black-500" />}
   trendData={transformDataForChart(data, "TikTok", ["Visualizaciones de Videos"])
     .map(item => ({ date: item.date, value: item["Visualizaciones de Videos"] })) // 🔹 Convertir clave a "value"
-    .slice(-6)}
+    .slice(-13)}
+    chartType="line"
 />
+
+<MetricCard
+            title="YouTube: Visualizaciones"
+            value={calculateMetricValue(data, "Redes Sociales", "YouTube", "Visualizaciones", dateRange)}
+            previousValue={calculateMetricValue(data, "Redes Sociales", "YouTube", "Visualizaciones", previousDateRange)}
+            icon={<Youtube className="h-6 w-6 text-red-500" />}
+            trendData={transformDataForChart(data, "YouTube", ["Visualizaciones"])
+              .map(item => ({ date: item.date, value: item["Visualizaciones"] }))
+              .slice(-13)}
+            barColorClass="bg-red-500"
+            chartType="line"
+          />
+
 <MetricCard
   title="Facebook: Seguidores"
   value={calculateMetricValue(data, "Redes Sociales", "Facebook", "Seguidores", dateRange)}
@@ -290,12 +296,13 @@ const combineSocialData = () => {
   icon={<Facebook className="h-6 w-6 text-blue-500" />}
   trendData={transformDataForChart(data, "Facebook", ["Seguidores"])
     .map(item => ({ date: item.date, value: item["Seguidores"] })) // 🔹 Convertir clave a "value"
-    .slice(-6)}
+    .slice(-13)}
     barColorClass="bg-blue-700"
+    chartType="line"
 />
         </div>
 
-        
+        {/* Tendencias de Redes Sociales
 <Card className="border-none shadow-sm">
   <CardHeader>
     <CardTitle className="text-lg text-gray-700">Tendencia de Redes Sociales</CardTitle>
@@ -351,13 +358,14 @@ const combineSocialData = () => {
     </ResponsiveContainer>
   </CardContent>
 </Card>
+Termina Tendendias de Redes Sociales */}
         
       </section>
 
       <Separator className="my-8" />
 
       {/* YouTube */}
-      <section className="bg-white p-6 rounded-lg shadow-sm border-l-4 border-red-600">
+      <section className="bg-white p-6 rounded-lg shadow-sm border-l-5 border-red-600">
         <SectionHeader
           icon={Youtube}
           title="YouTube"
@@ -365,7 +373,7 @@ const combineSocialData = () => {
           color="bg-red-600"
         />
         <div className="space-y-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <MetricCard
   title="Nuevos Videos"
   value={calculateMetricValue(data, "Redes Sociales", "YouTube", "Nuevos Videos", dateRange)}
@@ -373,8 +381,9 @@ const combineSocialData = () => {
   icon="🎥"
   trendData={transformDataForChart(data, "YouTube", ["Nuevos Videos"])
     .map(item => ({ date: item.date, value: item["Nuevos Videos"] }))
-    .slice(-6)} 
-    
+    .slice(-13)} 
+    barColorClass="bg-red-500"
+    chartType="line"
 />
 <MetricCard
   title="Nuevos Suscriptores"
@@ -383,8 +392,9 @@ const combineSocialData = () => {
   icon="👥"
   trendData={transformDataForChart(data, "YouTube", ["Nuevos Suscriptores"])
     .map(item => ({ date: item.date, value: item["Nuevos Suscriptores"] }))
-    .slice(-6)}
-    
+    .slice(-13)}
+    barColorClass="bg-red-500"
+    chartType="line"
 />
 <MetricCard
   title="Visualizaciones"
@@ -393,8 +403,9 @@ const combineSocialData = () => {
   icon="👁️"
   trendData={transformDataForChart(data, "YouTube", ["Visualizaciones"])
     .map(item => ({ date: item.date, value: item["Visualizaciones"] }))
-    .slice(-6)}
-    
+    .slice(-13)}
+    barColorClass="bg-red-500"
+    chartType="line"
 />
           </div>
 
@@ -415,7 +426,7 @@ const combineSocialData = () => {
           color="bg-purple-600"
         />
         <div className="space-y-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
             <MetricCard
               title="Total Seguidores"
               value={calculateMetricValue(data, "Redes Sociales", "Instagram", "Seguidores", dateRange, "fritzvenezuela")}
@@ -423,8 +434,9 @@ const combineSocialData = () => {
               icon="👥"
               trendData={transformDataForChart(data, "Instagram", ["Seguidores"])
                 .map(item => ({ date: item.date, value: item["Seguidores"] })) // 🔹 Convertir clave a "value"
-                .slice(-6)}
-                //barColorClass="bg-purple-700"
+                .slice(-13)}
+                barColorClass="bg-purple-700"
+                chartType="line"
             />
             <MetricCard
               title="Nuevos Followers"
@@ -433,8 +445,9 @@ const combineSocialData = () => {
               icon="✨"
               trendData={transformDataForChart(data, "Instagram", ["Nuevos Seguidores"])
                 .map(item => ({ date: item.date, value: item["Nuevos Seguidores"] })) // 🔹 Convertir clave a "value"
-                .slice(-6)}
-                //barColorClass="bg-purple-700"
+                .slice(-13)}
+                barColorClass="bg-purple-700"
+                chartType="line"
             />
             <MetricCard
               title="Impresiones"
@@ -443,8 +456,9 @@ const combineSocialData = () => {
               icon="👁️"
               trendData={transformDataForChart(data, "Instagram", ["Impresiones"])
                 .map(item => ({ date: item.date, value: item["Impresiones"] })) // 🔹 Convertir clave a "value"
-                .slice(-6)}
-                //barColorClass="bg-purple-700"
+                .slice(-13)}
+                barColorClass="bg-purple-700"
+                chartType="line"
             />
             <MetricCard
               title="Alcance"
@@ -453,8 +467,9 @@ const combineSocialData = () => {
               icon="📢"
               trendData={transformDataForChart(data, "Instagram", ["Alcance"])
                 .map(item => ({ date: item.date, value: item["Alcance"] })) // 🔹 Convertir clave a "value"
-                .slice(-6)}
-                //barColorClass="bg-purple-700"
+                .slice(-13)}
+                barColorClass="bg-purple-700"
+                chartType="line"
             />
             <MetricCard
               title="Interacciones"
@@ -463,8 +478,9 @@ const combineSocialData = () => {
               icon="❤️"
               trendData={transformDataForChart(data, "Instagram", ["Interacciones"])
                 .map(item => ({ date: item.date, value: item["Interacciones"] })) // 🔹 Convertir clave a "value"
-                .slice(-6)}
-                //barColorClass="bg-purple-700"
+                .slice(-13)}
+                barColorClass="bg-purple-700"
+                chartType="line"
             />
           </div>
 
@@ -480,7 +496,7 @@ const combineSocialData = () => {
           color="bg-purple-600"
         />
         <div className="space-y-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
           <MetricCard
   title="Total Seguidores"
   value={
@@ -493,7 +509,9 @@ const combineSocialData = () => {
   icon="👥"
   trendData={transformDataForChart(data, "Instagram", ["Seguidores"], "fritzchile")
     .map(item => ({ date: item.date, value: item["Seguidores"] }))
-    .slice(-6)}
+    .slice(-13)}
+     barColorClass="bg-purple-700"
+    chartType="line"
 />
 
             <MetricCard
@@ -503,8 +521,9 @@ const combineSocialData = () => {
               icon="✨"
               trendData={transformDataForChart(data, "Instagram", ["Nuevos Seguidores"], "fritzchile")
                 .map(item => ({ date: item.date, value: item["Nuevos Seguidores"] })) // 🔹 Convertir clave a "value"
-                .slice(-6)}
-                //barColorClass="bg-purple-700"
+                .slice(-13)}
+                barColorClass="bg-purple-700"
+                chartType="line"
             />
             <MetricCard
               title="Impresiones"
@@ -513,8 +532,9 @@ const combineSocialData = () => {
               icon="👁️"
               trendData={transformDataForChart(data, "Instagram", ["Impresiones"], "fritzchile")
                 .map(item => ({ date: item.date, value: item["Impresiones"] })) // 🔹 Convertir clave a "value"
-                .slice(-6)}
-                //barColorClass="bg-purple-700"
+                .slice(-13)}
+                barColorClass="bg-purple-700"
+                chartType="line"
             />
             <MetricCard
               title="Alcance"
@@ -523,8 +543,9 @@ const combineSocialData = () => {
               icon="📢"
               trendData={transformDataForChart(data, "Instagram", ["Alcance"], "fritzchile")
                 .map(item => ({ date: item.date, value: item["Alcance"] })) // 🔹 Convertir clave a "value"
-                .slice(-6)}
-                //barColorClass="bg-purple-700"
+                .slice(-13)}
+                barColorClass="bg-purple-700"
+                chartType="line"
             />
             <MetricCard
               title="Interacciones"
@@ -533,8 +554,9 @@ const combineSocialData = () => {
               icon="❤️"
               trendData={transformDataForChart(data, "Instagram", ["Interacciones"], "fritzchile")
                 .map(item => ({ date: item.date, value: item["Interacciones"] })) // 🔹 Convertir clave a "value"
-                .slice(-6)}
-                //barColorClass="bg-purple-700"
+                .slice(-13)}
+                barColorClass="bg-purple-700"
+                chartType="line"
             />
           </div>
 
@@ -550,7 +572,7 @@ const combineSocialData = () => {
           color="bg-purple-600"
         />
         <div className="space-y-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
             <MetricCard
               title="Total Seguidores"
               value={calculateMetricValue(data, "Redes Sociales", "Instagram", "Seguidores", dateRange, "fritzinternational")}
@@ -558,8 +580,9 @@ const combineSocialData = () => {
               icon="👥"
               trendData={transformDataForChart(data, "Instagram", ["Seguidores"], "fritzinternational")
                 .map(item => ({ date: item.date, value: item["Seguidores"] })) // 🔹 Convertir clave a "value"
-                .slice(-6)}
-                //barColorClass="bg-purple-700"
+                .slice(-13)}
+                barColorClass="bg-purple-700"
+                chartType="line"
             />
             <MetricCard
               title="Nuevos Followers"
@@ -568,8 +591,9 @@ const combineSocialData = () => {
               icon="✨"
               trendData={transformDataForChart(data, "Instagram", ["Nuevos Seguidores"], "fritzinternational")
                 .map(item => ({ date: item.date, value: item["Nuevos Seguidores"] })) // 🔹 Convertir clave a "value"
-                .slice(-6)}
-                //barColorClass="bg-purple-700"
+                .slice(-13)}
+                barColorClass="bg-purple-700"
+                chartType="line"
             />
             <MetricCard
               title="Impresiones"
@@ -578,8 +602,9 @@ const combineSocialData = () => {
               icon="👁️"
               trendData={transformDataForChart(data, "Instagram", ["Impresiones"], "fritzinternational")
                 .map(item => ({ date: item.date, value: item["Impresiones"] })) // 🔹 Convertir clave a "value"
-                .slice(-6)}
-                //barColorClass="bg-purple-700"
+                .slice(-13)}
+                barColorClass="bg-purple-700"
+                chartType="line"
             />
             <MetricCard
               title="Alcance"
@@ -588,8 +613,9 @@ const combineSocialData = () => {
               icon="📢"
               trendData={transformDataForChart(data, "Instagram", ["Alcance"], "fritzinternational")
                 .map(item => ({ date: item.date, value: item["Alcance"] })) // 🔹 Convertir clave a "value"
-                .slice(-6)}
-                //barColorClass="bg-purple-700"
+                .slice(-13)}
+                barColorClass="bg-purple-700"
+                chartType="line"
             />
             <MetricCard
               title="Interacciones"
@@ -598,8 +624,9 @@ const combineSocialData = () => {
               icon="❤️"
               trendData={transformDataForChart(data, "Instagram", ["Interacciones"], "fritzinternational")
                 .map(item => ({ date: item.date, value: item["Interacciones"] })) // 🔹 Convertir clave a "value"
-                .slice(-6)}
-                //barColorClass="bg-purple-700"
+                .slice(-13)}
+                barColorClass="bg-purple-700"
+                chartType="line"
             />
           </div>
 
@@ -617,7 +644,7 @@ const combineSocialData = () => {
           color="bg-black"
         />
         <div className="space-y-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
             <MetricCard
               title="Nuevos Followers"
               value={calculateMetricValue(data, "Redes Sociales", "TikTok", "Nuevos Seguidores", dateRange)}
@@ -625,7 +652,8 @@ const combineSocialData = () => {
               icon="✨"
               trendData={transformDataForChart(data, "TikTok", ["Nuevos Seguidores"])
                 .map(item => ({ date: item.date, value: item["Nuevos Seguidores"] })) // 🔹 Convertir clave a "value"
-                .slice(-6)}
+                .slice(-13)}
+                chartType="line"
             />
             <MetricCard
               title="Seguidores Netos"
@@ -634,7 +662,8 @@ const combineSocialData = () => {
               icon="👥"
               trendData={transformDataForChart(data, "TikTok", ["Seguidores Netos"])
                 .map(item => ({ date: item.date, value: item["Seguidores Netos"] })) // 🔹 Convertir clave a "value"
-                .slice(-6)}
+                .slice(-13)}
+                chartType="line"
             />
             <MetricCard
               title="Visualizaciones Videos"
@@ -643,7 +672,8 @@ const combineSocialData = () => {
               icon="👁️"
               trendData={transformDataForChart(data, "TikTok", ["Visualizaciones de Videos"])
                 .map(item => ({ date: item.date, value: item["Visualizaciones de Videos"] })) // 🔹 Convertir clave a "value"
-                .slice(-6)}
+                .slice(-13)}
+                chartType="line"
             />
             <MetricCard
               title="Visualizaciones Perfil"
@@ -652,7 +682,8 @@ const combineSocialData = () => {
               icon="👤"
               trendData={transformDataForChart(data, "TikTok", ["Visualizaciones de Perfil"])
                 .map(item => ({ date: item.date, value: item["Visualizaciones de Perfil"] })) // 🔹 Convertir clave a "value"
-                .slice(-6)}
+                .slice(-13)}
+                chartType="line"
             />
             <MetricCard
               title="Me gusta"
@@ -661,7 +692,8 @@ const combineSocialData = () => {
               icon="❤️"
               trendData={transformDataForChart(data, "TikTok", ["Me gusta"])
                 .map(item => ({ date: item.date, value: item["Me gusta"] })) // 🔹 Convertir clave a "value"
-                .slice(-6)}
+                .slice(-13)}
+                chartType="line"
             />
             <MetricCard
               title="Compartidos"
@@ -670,7 +702,8 @@ const combineSocialData = () => {
               icon="🔄"
               trendData={transformDataForChart(data, "TikTok", ["Compartidos"])
                 .map(item => ({ date: item.date, value: item["Compartidos"] })) // 🔹 Convertir clave a "value"
-                .slice(-6)}
+                .slice(-13)}
+                chartType="line"
             />
           </div>
 
@@ -698,8 +731,9 @@ const combineSocialData = () => {
               icon="👥"
               trendData={transformDataForChart(data, "Facebook", ["Seguidores"])
                 .map(item => ({ date: item.date, value: item["Seguidores"] })) // 🔹 Convertir clave a "value"
-                .slice(-6)}
-                //barColorClass="bg-blue-700"
+                .slice(-13) }
+                chartType="line"
+                barColorClass="bg-blue-700"
             />
             <MetricCard
               title="Nuevos Followers"
@@ -708,8 +742,9 @@ const combineSocialData = () => {
               icon="✨"
               trendData={transformDataForChart(data, "Facebook", ["Nuevos Seguidores"])
                 .map(item => ({ date: item.date, value: item["Nuevos Seguidores"] })) // 🔹 Convertir clave a "value"
-                .slice(-6)}
-                //barColorClass="bg-blue-700"
+                .slice(-13)}
+                chartType="line"
+                barColorClass="bg-blue-700"
             />
           </div>
 
