@@ -427,17 +427,41 @@ Termina Tendendias de Redes Sociales */}
         />
         <div className="space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
-            <MetricCard
-              title="Total Seguidores"
-              value={calculateMetricValue(data, "Redes Sociales", "Instagram", "Seguidores", dateRange, "fritzvenezuela")}
-              previousValue={calculateMetricValue(data, "Redes Sociales", "Instagram", "Seguidores", previousDateRange, "fritzvenezuela")}
-              icon="👥"
-              trendData={transformDataForChart(data, "Instagram", ["Seguidores"])
-                .map(item => ({ date: item.date, value: item["Seguidores"] })) // 🔹 Convertir clave a "value"
-                .slice(-13)}
-                barColorClass="bg-purple-700"
-                chartType="line"
-            />
+            {(() => {
+              const followersData = data?.filter(item => 
+                item.type === "Redes Sociales" && 
+                item.category === "Instagram" && 
+                item.metric === "Seguidores" &&
+                item.account === "fritzvenezuela"
+              ) || [];
+              
+              console.log('📊 Raw followers data:', followersData);
+              
+              const currentValue = calculateMetricValue(
+                data, 
+                "Redes Sociales", 
+                "Instagram", 
+                "Seguidores", 
+                dateRange, 
+                "fritzvenezuela"
+              );
+              
+              console.log('🧮 Calculated followers value:', currentValue);
+              
+              return (
+                <MetricCard
+                  title="Total Seguidores"
+                  value={currentValue}
+                  previousValue={calculateMetricValue(data, "Redes Sociales", "Instagram", "Seguidores", previousDateRange, "fritzvenezuela")}
+                  icon="👥"
+                  trendData={transformDataForChart(data, "Instagram", ["Seguidores"], "fritzvenezuela")
+                    .map(item => ({ date: item.date, value: item["Seguidores"] }))
+                    .slice(-13)}
+                  barColorClass="bg-purple-700"
+                  chartType="line"
+                />
+              );
+            })()}
             <MetricCard
               title="Nuevos Followers"
               value={calculateMetricValue(data, "Redes Sociales", "Instagram", "Nuevos Seguidores", dateRange, "fritzvenezuela")}
@@ -499,16 +523,15 @@ Termina Tendendias de Redes Sociales */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
           <MetricCard
   title="Total Seguidores"
-  value={
-    (() => {
-      console.log(`✅ Pasando account a calculateMetricValue: fritzchile`);
-      return calculateMetricValue(data, "Redes Sociales", "Instagram", "Seguidores", dateRange, "fritzchile");
-    })()
-  }
+  value={calculateMetricValue(data, "Redes Sociales", "Instagram", "Seguidores", dateRange, "fritzchile")}
+  
   previousValue={calculateMetricValue(data, "Redes Sociales", "Instagram", "Seguidores", previousDateRange, "fritzchile")}
   icon="👥"
   trendData={transformDataForChart(data, "Instagram", ["Seguidores"], "fritzchile")
-    .map(item => ({ date: item.date, value: item["Seguidores"] }))
+    .map(item => ({
+      date: item.date, 
+      value: Number(item["Seguidores"]) || 0
+    }))
     .slice(-13)}
      barColorClass="bg-purple-700"
     chartType="line"

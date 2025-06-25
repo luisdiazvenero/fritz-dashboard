@@ -1,29 +1,53 @@
 // src/lib/metricsUtils.js
 
 export const calculateMetricValue = (data, type, category, metric, dateRange, account = null) => {
-  if (!data || !Array.isArray(data)) return 0;
+  if (!data || !Array.isArray(data)) {
+    console.log('❌ No data or data is not an array');
+    return 0;
+  }
 
-  console.log(`🔍 Verificando estructura de datos recibidos:`, data);
+  console.log(`🔍 Verificando estructura de datos para:`, { type, category, metric, account });
+  console.log(`📅 Rango de fechas:`, dateRange ? 
+    `${dateRange.from?.toISOString()} - ${dateRange.to?.toISOString()}` : 'Sin rango');
 
   const filteredData = data.filter((item) => {
       const itemDate = new Date(item.date);
       const isInDateRange = !dateRange || (itemDate >= dateRange.from && itemDate <= dateRange.to);
-      const matchesAccount = account ? item.account === account : true; // 🔹 Filtra por cuenta si está definida
+      const matchesAccount = account ? item.account === account : true;
+      const matchesMetric = item.metric === metric;
 
-      // 🔍 Nuevo log para ver cada métrica antes de filtrarla
-      console.log(`🛠 Evaluando item - account: ${item.account}, type: ${item.type}, category: ${item.category}, metric: ${item.metric}`);
-
-      return (
-          item.type === type &&
+      const shouldInclude = item.type === type &&
           item.category === category &&
-          item.metric === metric &&
+          matchesMetric &&
           isInDateRange &&
-          matchesAccount
-      );
+          matchesAccount;
+
+      if (shouldInclude) {
+        console.log(`✅ Incluyendo:`, {
+          date: item.date,
+          value: item.value,
+          account: item.account,
+          metric: item.metric,
+          isInDateRange,
+          matchesAccount,
+          matchesMetric
+        });
+      }
+
+      return shouldInclude;
   });
 
-  console.log(`✅ Datos filtrados para account=${account}:`, filteredData);
+  console.log(`📊 Datos filtrados para ${metric} (${account || 'sin cuenta'}):`, filteredData);
 
+  // Para las métricas de seguidores, devolvemos el valor más reciente en lugar de la suma
+  if (metric === 'Seguidores' || metric === 'Total Seguidores') {
+    if (filteredData.length === 0) return 0;
+    // Ordenamos por fecha descendente y tomamos el primero (más reciente)
+    const sortedByDate = [...filteredData].sort((a, b) => new Date(b.date) - new Date(a.date));
+    return sortedByDate[0].value;
+  }
+
+  // Para todas las demás métricas, sumamos los valores
   return filteredData.reduce((sum, item) => sum + item.value, 0);
 };
 
